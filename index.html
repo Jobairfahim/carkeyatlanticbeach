@@ -56,6 +56,12 @@
   }
   nav.scrolled { box-shadow: 0 4px 30px var(--shadow-md); }
 
+  .nav-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+
   .nav-logo {
     display: flex; align-items: center; gap: 10px;
     text-decoration: none; flex-shrink: 0;
@@ -82,6 +88,9 @@
   .nav-links {
     display: flex; align-items: center; gap: 0.25rem;
     list-style: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
   .nav-links a {
     display: block; padding: 0.5rem 0.85rem;
@@ -612,6 +621,43 @@
     font-size: 0.78rem; font-weight: 500; color: var(--slate);
   }
 
+  /* Service area map */
+  .service-area-map {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .service-area-map h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--navy);
+  }
+  .map-container {
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 4px 20px var(--shadow);
+  }
+  .map-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .map-info p {
+    font-size: 0.9rem;
+    color: var(--slate);
+    line-height: 1.6;
+    margin: 0;
+  }
+  .map-info strong {
+    color: var(--navy);
+    font-weight: 600;
+  }
+
   /* ── FOOTER ── */
   footer {
     background: var(--navy); color: rgba(255,255,255,0.7);
@@ -652,10 +698,39 @@
   .footer-bottom a { color: rgba(255,255,255,0.5); text-decoration: none; }
   .footer-bottom a:hover { color: var(--gold-light); }
 
+  /* ── FLOATING CALL BUTTON ── */
+  .floating-call-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--navy);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 8px 25px rgba(15, 34, 64, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    font-size: 24px;
+  }
+  .floating-call-btn:hover {
+    background: var(--gold);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(201, 147, 58, 0.4);
+  }
+  .floating-call-btn:active {
+    transform: translateY(-1px);
+  }
+
   /* ── MOBILE RESPONSIVE ── */
   @media (max-width: 900px) {
     .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
-    .hero-visual { order: -1; }
+    .hero-visual { order: 2; }
+    .hero-stats { order: 3; }
     .about-grid { grid-template-columns: 1fr; }
     .contact-grid { grid-template-columns: 1fr; }
     .faq-grid { grid-template-columns: 1fr; }
@@ -663,6 +738,7 @@
     .footer-top { grid-template-columns: 1fr 1fr; }
     .nav-links { display: none; }
     .hamburger { display: flex; }
+    .nav-logo img { margin-left: 0 !important; }
   }
   @media (max-width: 600px) {
     section { padding: 3.5rem 1.25rem; }
@@ -680,14 +756,9 @@
 
 <!-- ── NAVBAR ── -->
 <nav id="navbar">
-  <a href="#home" class="nav-logo">
-    <div class="nav-logo-icon">
-      <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3" fill="none" stroke="#C9933A" stroke-width="2"/></svg>
-    </div>
-    <div class="nav-logo-text">
-      <span>Car Key Replacement</span>
-      <span>Atlantic Beach, FL</span>
-    </div>
+    <a href="#home" class="nav-logo">
+    <img src="assets/images/logo.webp" alt="Car Key Replacement Atlantic Beach" style="width: 100px; height: 100px; border-radius: 10px; margin-left: 260px;">
+    
   </a>
 
   <ul class="nav-links">
@@ -718,7 +789,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#contact">Contact Us</a></li>
     <li><a href="#faq">FAQ</a></li>
-    <li><a href="tel:9048489429" class="nav-cta">📞 904-848-9429</a></li>
+    <li><a href="tel:9048489429" class="nav-cta ">📞 904-848-9429</a></li>
   </ul>
 
   <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -761,30 +832,31 @@
         </a>
         <a href="#services" class="btn-secondary">Our Services</a>
       </div>
-      <div class="hero-stats">
-        <div class="stat-item">
-          <span class="stat-num">60mi</span>
-          <span class="stat-label">Service Radius</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-num">30-60</span>
-          <span class="stat-label">Min Per Job</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-num">5★</span>
-          <span class="stat-label">Customer Rating</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-num">100%</span>
-          <span class="stat-label">Mobile Service</span>
-        </div>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-num">60mi</span>
+        <span class="stat-label">Service Radius</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">30-60</span>
+        <span class="stat-label">Min Per Job</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">5★</span>
+        <span class="stat-label">Customer Rating</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">100%</span>
+        <span class="stat-label">Mobile Service</span>
       </div>
     </div>
 
     <div class="hero-visual">
       <div class="hero-card-main">
         <div class="hero-float-badge">
-          <span>🚗</span>
+         
           We Come<br>To You!
         </div>
         <div class="hero-card-top">
@@ -1402,21 +1474,23 @@
           </a>
         </div>
 
-        <div class="service-area-card" style="margin-top:1.5rem;">
-          <div class="map-icon-wrap">
-            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div class="service-area-map" style="margin-top:1.5rem;">
+          <h3>Our Location</h3>
+          <div class="map-container">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30.3313!2d-81.3957!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0x0!2zMGFkZjFkZjFk!5e0!3m2!1sen!2sus!4v1707443123997!6m6!1sen!2sus!4s%203633%20Atlantic%20Blvd%2C%20Atlantic%20Beach%2C%20FL%2032233!5e0!3m2!1sen!2sus!4v1707443123997"
+              width="100%" 
+              height="300" 
+              style="border:0; border-radius: var(--radius);" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
           </div>
-          <h3>Service Area</h3>
-          <p>We serve Atlantic Beach and all surrounding areas within a 60-mile radius, including:</p>
-          <div class="service-tags">
-            <span class="service-tag">Atlantic Beach</span>
-            <span class="service-tag">Jacksonville Beach</span>
-            <span class="service-tag">Neptune Beach</span>
-            <span class="service-tag">Ponte Vedra</span>
-            <span class="service-tag">Jacksonville</span>
-            <span class="service-tag">Orange Park</span>
-            <span class="service-tag">Fleming Island</span>
-            <span class="service-tag">St. Augustine</span>
+          <div class="map-info">
+            <p><strong>Address:</strong> 363 Atlantic Blvd, Unit 4290A, Atlantic Beach, FL 32233</p>
+            <p><strong>Service Area:</strong> 60-mile radius around Atlantic Beach</p>
+            <p><strong>Hours:</strong> Available 24/7 for emergency service</p>
           </div>
         </div>
       </div>
@@ -1430,10 +1504,7 @@
     <div class="footer-top">
       <div>
         <div class="footer-brand-name">
-          <span class="fb-icon">
-            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3" fill="none" stroke="white" stroke-width="1.5"/></svg>
-          </span>
-          Car Key Replacement Atlantic Beach
+          <img src="assets/images/logo.webp" alt="Car Key Replacement Atlantic Beach" style="width: 100px; height: 100px; border-radius: 8px;">
         </div>
         <div class="footer-tagline">Local & family-owned car key specialists serving Atlantic Beach, FL and the surrounding area. Mobile service available — we come to you.</div>
         <a href="tel:9048489429" class="footer-phone-link">
@@ -1463,11 +1534,16 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2024 Car Key Replacement Atlantic Beach. All rights reserved.</span>
-      <span>363 Atlantic Blvd, Unit 4290A, Atlantic Beach, FL 32233</span>
+      <div>
+      </div>
     </div>
   </div>
 </footer>
+
+<!-- ── FLOATING CALL BUTTON ── -->
+<a href="tel:9048489429" class="floating-call-btn" aria-label="Call Now">
+  📞
+</a>
 
 <script>
   // Navbar scroll effect
