@@ -7,7 +7,9 @@
 <title>Car Key Replacement Atlantic Beach | Local Mobile Key Service</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap"></noscript>
+<link rel="preload" href="assets/images/logo.webp" as="image" type="image/webp">
 <style>
 :root{
   --cream:#FDFAF4;--white:#fff;--navy:#0F2240;--navy2:#1A3560;
@@ -229,6 +231,27 @@ footer{background:var(--navy);color:rgba(255,255,255,.68);padding:3rem 1.5rem 1.
 .ft-bot a{color:rgba(255,255,255,.45);text-decoration:none}
 .ft-bot a:hover{color:var(--gold2)}
 
+/* ───── MOBILE FCP OPTIMIZATIONS ───── */
+@media(max-width:600px){
+  /* Optimize font loading for mobile */
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+  
+  /* Reduce hero complexity for faster render */
+  #home{min-height:auto;padding-top:70px;padding-bottom:2rem}
+  .hero-grid{gap:2rem}
+  .hero-visual{order:-1;min-height:300px}
+  
+  /* Optimize animations for mobile */
+  .reveal{transition:none}
+  .float-badge{animation:none}
+  
+  /* Simplify shadows for mobile performance */
+  .hero-card,.sc{box-shadow:0 4px 15px var(--sh)}
+  
+  /* Reduce padding for faster render */
+  section{padding:3rem 1.25rem}
+}
+
 /* ───── RESPONSIVE ───── */
 @media(max-width:920px){
   .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
@@ -258,7 +281,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.68);padding:3rem 1.5rem 1.
 <nav id="navbar">
   <a href="#home" class="nav-logo">
     <div class="nav-logo-icon">
-      <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3" fill="none" stroke="#C9933A" stroke-width="2"/></svg>
+      <svg viewBox="0 0 24 24" width="21" height="21" fill="var(--gold)"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3" fill="none" stroke="#C9933A" stroke-width="2"/></svg>
     </div>
     <div class="nav-logo-text">
       <span>Car Key Replacement</span>
@@ -326,7 +349,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.68);padding:3rem 1.5rem 1.
         <div class="hero-card">
           <div class="float-badge"><span>🚗</span>We Come<br>To You!</div>
           <div class="hc-top">
-            <div class="hc-ico"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3" fill="none" stroke="#C9933A" stroke-width="2"/></svg></div>
+            <div class="hc-ico"><svg viewBox="0 0 24 24" width="25" height="25" fill="var(--gold)"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3" fill="none" stroke="#C9933A" stroke-width="2"/></svg></div>
             <div><div class="hc-title">Mobile Car Key Service</div><div class="hc-sub">Atlantic Beach &amp; 60-mile radius</div></div>
           </div>
           <div class="hc-chips">
