@@ -1,1024 +1,396 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Car Key Replacement Atlantic Beach - Local & Family-Owned Car Key Specialists. Mobile service, key fob replacement, ignition repair, push-to-start programming in Atlantic Beach, FL.">
-  <title>Car Key Replacement Atlantic Beach | Local Mobile Key Service</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@300;400;500;600&display=swap"></noscript>
-  <link rel="preload" href="assets/images/logo.webp" as="image" type="image/webp">
-  <style>
-  :root {
-    --cream: #FDFAF4;
-    --warm-white: #FFFFFF;
-    --navy: #0F2240;
-    --navy-light: #1A3560;
-    --gold: #C9933A;
-    --gold-light: #E8B567;
-    --gold-pale: #FDF3E3;
-    --slate: #4A5568;
-    --slate-light: #718096;
-    --border: #E8E0D0;
-    --shadow: rgba(15, 34, 64, 0.08);
-    --shadow-md: rgba(15, 34, 64, 0.14);
-    --shadow-lg: rgba(15, 34, 64, 0.20);
-    --radius: 12px;
-    --radius-lg: 20px;
-  }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Car Key Replacement Atlantic Beach – Local & Family-Owned Car Key Specialists. Mobile service, key fob, ignition repair, push-to-start programming in Atlantic Beach, FL.">
+<title>Car Key Replacement Atlantic Beach | Local Mobile Key Service</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FDFAF4;--white:#fff;--navy:#0F2240;--navy2:#1A3560;
+  --gold:#C9933A;--gold2:#E8B567;--gold-pale:#FDF3E3;
+  --slate:#4A5568;--slate2:#718096;--border:#E8E0D0;
+  --sh:rgba(15,34,64,.08);--sh2:rgba(15,34,64,.14);--sh3:rgba(15,34,64,.22);
+  --r:12px;--rl:20px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--navy);line-height:1.65;overflow-x:hidden}
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* ───── NAV ───── */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;background:rgba(253,250,244,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);transition:box-shadow .3s}
+nav.scrolled{box-shadow:0 4px 28px var(--sh2)}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.nav-logo-icon{width:40px;height:40px;background:var(--navy);border-radius:9px;display:grid;place-items:center;flex-shrink:0}
+.nav-logo-icon svg{width:21px;height:21px;fill:var(--gold)}
+.nav-logo-text span:first-child{display:block;font-family:'Fraunces',serif;font-size:.95rem;font-weight:700;color:var(--navy);line-height:1.1}
+.nav-logo-text span:last-child{display:block;font-size:.6rem;color:var(--gold);font-weight:700;letter-spacing:.09em;text-transform:uppercase}
+.nav-links{display:flex;align-items:center;gap:.15rem;list-style:none}
+.nav-links>li>a{display:flex;align-items:center;gap:4px;padding:.45rem .8rem;text-decoration:none;color:var(--navy);font-size:.85rem;font-weight:500;border-radius:8px;transition:background .2s,color .2s;white-space:nowrap}
+.nav-links>li>a:hover{background:var(--gold-pale);color:var(--gold)}
+.nav-links>li>a svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2.2;transition:transform .25s}
+.dropdown{position:relative}
+.dropdown:hover>a svg,.dropdown.open>a svg{transform:rotate(180deg)}
+.dd-menu{position:absolute;top:calc(100% + 6px);left:50%;transform:translateX(-50%) translateY(6px);background:var(--white);border:1px solid var(--border);border-radius:var(--r);box-shadow:0 12px 40px var(--sh3);padding:.4rem;min-width:230px;list-style:none;opacity:0;visibility:hidden;pointer-events:none;transition:all .2s ease}
+.dropdown:hover .dd-menu,.dropdown.open .dd-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);pointer-events:auto}
+.dd-menu li a{display:flex;align-items:center;gap:10px;padding:.55rem .8rem;border-radius:8px;text-decoration:none;font-size:.83rem;color:var(--navy);font-weight:500;transition:background .15s}
+.dd-menu li a:hover{background:var(--gold-pale);color:var(--gold)}
+.dd-ico{width:27px;height:27px;border-radius:7px;background:var(--gold-pale);display:grid;place-items:center;flex-shrink:0}
+.dd-ico svg{width:13px;height:13px;fill:var(--gold)}
+.nav-cta{background:var(--navy)!important;color:var(--white)!important;border-radius:8px!important;font-weight:600!important;padding:.45rem 1rem!important}
+.nav-cta:hover{background:var(--gold)!important;color:var(--white)!important}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.burger span{display:block;width:23px;height:2px;background:var(--navy);border-radius:2px;transition:all .3s}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mob-nav{display:none;position:fixed;top:68px;left:0;right:0;background:var(--white);border-bottom:1px solid var(--border);box-shadow:0 10px 30px var(--sh3);padding:1rem 1.5rem 1.5rem;z-index:999;flex-direction:column;gap:.2rem;max-height:calc(100vh - 68px);overflow-y:auto}
+.mob-nav.open{display:flex}
+.mob-nav a{display:block;padding:.7rem 1rem;text-decoration:none;color:var(--navy);font-size:.92rem;font-weight:500;border-radius:8px;transition:background .2s}
+.mob-nav a:hover{background:var(--gold-pale);color:var(--gold)}
+.mob-dd-btn{display:flex;align-items:center;justify-content:space-between;padding:.7rem 1rem;cursor:pointer;font-size:.92rem;font-weight:500;border-radius:8px;color:var(--navy);user-select:none}
+.mob-dd-btn:hover{background:var(--gold-pale);color:var(--gold)}
+.mob-sub{display:none;flex-direction:column;gap:.1rem;padding-left:1rem}
+.mob-sub.open{display:flex}
+.mob-cta{margin-top:.5rem;background:var(--navy)!important;color:var(--white)!important;text-align:center;border-radius:10px!important;font-weight:600!important}
 
-  html { scroll-behavior: smooth; font-size: 16px; }
+/* ───── SHARED ───── */
+section{padding:5rem 1.5rem}
+.wrap{max-width:1100px;margin:0 auto}
+.lbl{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.7rem}
+h2{font-family:'Fraunces',serif;font-size:clamp(1.75rem,3.8vw,2.55rem);font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:.9rem}
+.sub{font-size:.97rem;color:var(--slate);line-height:1.72;max-width:600px;margin-bottom:2.75rem}
+.btn-p{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:var(--white);padding:.8rem 1.6rem;border-radius:10px;text-decoration:none;font-weight:600;font-size:.92rem;transition:all .25s;box-shadow:0 4px 18px rgba(15,34,64,.24)}
+.btn-p:hover{background:var(--gold);transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,147,58,.3)}
+.btn-s{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--navy);padding:.8rem 1.6rem;border-radius:10px;text-decoration:none;font-weight:600;font-size:.92rem;border:1.5px solid var(--navy);transition:all .25s}
+.btn-s:hover{background:var(--navy);color:var(--white)}
+.chip-check{display:flex;align-items:center;gap:9px;padding:.55rem .9rem;border-radius:8px;background:var(--cream);border:1px solid var(--border);font-size:.84rem;font-weight:500;color:var(--navy)}
+.chip-check::before{content:'✓';display:grid;place-items:center;width:19px;height:19px;border-radius:50%;background:var(--gold-pale);color:var(--gold);font-size:.68rem;font-weight:700;flex-shrink:0}
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--cream);
-    color: var(--navy);
-    line-height: 1.6;
-    overflow-x: hidden;
-  }
+/* ───── HERO ───── */
+#home{min-height:100vh;padding-top:90px;padding-bottom:4rem;display:flex;align-items:center;background:linear-gradient(135deg,#FDFAF4 0%,#FEF8EC 45%,#F8F1E6 100%);position:relative;overflow:hidden}
+#home::before{content:'';position:absolute;top:-80px;right:-100px;width:560px;height:560px;background:radial-gradient(circle,rgba(201,147,58,.11) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+#home::after{content:'';position:absolute;bottom:-80px;left:-100px;width:440px;height:440px;background:radial-gradient(circle,rgba(15,34,64,.06) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center;position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--gold-pale);border:1px solid rgba(201,147,58,.3);color:var(--gold);border-radius:30px;padding:.38rem 1rem;font-size:.78rem;font-weight:700;margin-bottom:1.2rem;letter-spacing:.04em}
+.hero-badge::before{content:'';width:7px;height:7px;background:var(--gold);border-radius:50%;animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+h1{font-family:'Fraunces',serif;font-size:clamp(2.1rem,4.8vw,3.3rem);font-weight:700;line-height:1.14;color:var(--navy);margin-bottom:1.2rem}
+h1 em{font-style:italic;color:var(--gold)}
+.hero-p{font-size:1.02rem;color:var(--slate);margin-bottom:1.9rem;line-height:1.72;max-width:500px}
+.hero-btns{display:flex;gap:.9rem;flex-wrap:wrap;margin-bottom:2.4rem}
+.hero-stats{display:flex;gap:1.4rem;flex-wrap:wrap}
+.stat-n{font-family:'Fraunces',serif;font-size:1.75rem;font-weight:700;color:var(--navy);line-height:1}
+.stat-l{font-size:.75rem;color:var(--slate2);font-weight:500;margin-top:2px}
+.hero-card{background:var(--white);border-radius:var(--rl);padding:1.85rem;box-shadow:0 20px 55px var(--sh3);border:1px solid var(--border);position:relative;max-width:390px;width:100%;margin:0 auto}
+.hc-top{display:flex;align-items:center;gap:12px;padding-bottom:1.2rem;margin-bottom:1.2rem;border-bottom:1px solid var(--border)}
+.hc-ico{width:50px;height:50px;border-radius:12px;background:var(--navy);display:grid;place-items:center;flex-shrink:0}
+.hc-ico svg{width:25px;height:25px;fill:var(--gold)}
+.hc-title{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:600}
+.hc-sub{font-size:.78rem;color:var(--slate2)}
+.hc-chips{display:flex;flex-direction:column;gap:.55rem}
+.float-badge{position:absolute;top:-18px;right:-18px;background:var(--gold);color:var(--white);border-radius:12px;padding:.7rem .95rem;box-shadow:0 8px 22px rgba(201,147,58,.42);font-size:.78rem;font-weight:700;text-align:center;z-index:3;animation:float 3s ease-in-out infinite}
+.float-badge span{display:block;font-size:1.2rem}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 
-  /* ── NAVBAR ── */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 1000;
-    background: rgba(253, 250, 244, 0.96);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-    padding: 0 1.5rem;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transition: box-shadow 0.3s;
-  }
-  nav.scrolled { box-shadow: 0 4px 30px var(--shadow-md); }
+/* ───── ABOUT ───── */
+#about{background:var(--white)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.about-body p{color:var(--slate);line-height:1.72;margin-bottom:.9rem;font-size:.97rem}
+.about-features{display:flex;flex-direction:column;gap:1.1rem;margin-top:1.75rem}
+.af{display:flex;align-items:flex-start;gap:15px;padding:1.1rem;border-radius:var(--r);background:var(--cream);border:1px solid var(--border);transition:box-shadow .25s}
+.af:hover{box-shadow:0 4px 18px var(--sh)}
+.af-ico{width:42px;height:42px;border-radius:10px;background:var(--navy);display:grid;place-items:center;flex-shrink:0}
+.af-ico svg{width:20px;height:20px;fill:var(--gold)}
+.af-t{font-weight:600;font-size:.92rem;margin-bottom:.2rem}
+.af-d{font-size:.83rem;color:var(--slate);line-height:1.5}
+.about-card{background:var(--navy);border-radius:var(--rl);padding:2.25rem;color:var(--white);position:relative;overflow:hidden}
+.about-card::before{content:'';position:absolute;top:-50px;right:-50px;width:200px;height:200px;background:rgba(201,147,58,.14);border-radius:50%}
+.ac-quote{font-family:'Fraunces',serif;font-size:1.05rem;line-height:1.65;font-style:italic;margin-bottom:1.75rem;position:relative;z-index:1}
+.ac-quote::before{content:'"';font-size:2.8rem;color:var(--gold);line-height:0;vertical-align:-.45em;display:block;margin-bottom:.45rem}
+.ac-rows{display:flex;flex-direction:column;gap:.85rem;position:relative;z-index:1}
+.ac-row{display:flex;align-items:flex-start;gap:12px;padding:.9rem;border-radius:10px;background:rgba(255,255,255,.08)}
+.ac-txt{font-size:.83rem;color:rgba(255,255,255,.8);font-weight:500;line-height:1.4}
 
-  .nav-content {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-  }
+/* ───── SERVICES OVERVIEW ───── */
+#services{background:var(--cream)}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:1.4rem}
+.sc{background:var(--white);border:1px solid var(--border);border-radius:var(--rl);padding:1.85rem;transition:all .3s;position:relative;overflow:hidden}
+.sc:hover{transform:translateY(-4px);box-shadow:0 16px 40px var(--sh2);border-color:var(--gold2)}
+.sc-bar{position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--navy),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.sc:hover .sc-bar{transform:scaleX(1)}
+.sc-ico{width:54px;height:54px;border-radius:13px;background:var(--gold-pale);display:grid;place-items:center;margin-bottom:1.15rem}
+.sc-ico svg{width:27px;height:27px;fill:var(--gold)}
+.sc-t{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:600;margin-bottom:.5rem;color:var(--navy)}
+.sc-d{font-size:.86rem;color:var(--slate);line-height:1.65;margin-bottom:1.1rem}
+.sc-ul{list-style:none;display:flex;flex-direction:column;gap:.35rem}
+.sc-ul li{font-size:.82rem;color:var(--slate);display:flex;align-items:flex-start;gap:8px}
+.sc-ul li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:.45em}
+.sc-link{display:inline-block;margin-top:1.1rem;color:var(--gold);font-size:.83rem;font-weight:600;text-decoration:none}
+.sc-link:hover{color:var(--navy)}
 
-  .nav-logo {
-    display: flex; align-items: center; gap: 10px;
-    text-decoration: none; flex-shrink: 0;
-  }
-  .nav-logo-icon {
-    width: 42px; height: 42px;
-    background: var(--navy);
-    border-radius: 10px;
-    display: grid; place-items: center;
-    flex-shrink: 0;
-  }
-  .nav-logo-icon svg { width: 22px; height: 22px; fill: var(--gold); }
-  .nav-logo-text { display: flex; flex-direction: column; }
-  .nav-logo-text span:first-child {
-    font-family: 'Fraunces', serif;
-    font-size: 1rem; font-weight: 700;
-    color: var(--navy); line-height: 1.1;
-  }
-  .nav-logo-text span:last-child {
-    font-size: 0.65rem; color: var(--gold); font-weight: 600;
-    letter-spacing: 0.08em; text-transform: uppercase;
-  }
+/* ───── DETAIL SECTIONS ───── */
+.det-sec{padding:4.5rem 1.5rem}
+.det-sec.alt{background:var(--cream)}
+.det-sec.reg{background:var(--white)}
+.det-intro{color:var(--slate);line-height:1.72;max-width:760px;margin-bottom:2rem;font-size:.97rem}
+.det-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.dbox{background:var(--cream);border:1px solid var(--border);border-radius:var(--r);padding:1.25rem}
+.det-sec.alt .dbox{background:var(--white)}
+.dbox h4{font-size:.88rem;font-weight:700;color:var(--navy);margin-bottom:.75rem}
+.dbox ul{list-style:none;display:flex;flex-direction:column;gap:.38rem}
+.dbox ul li{font-size:.83rem;color:var(--slate);display:flex;align-items:flex-start;gap:8px;line-height:1.45}
+.dbox ul li::before{content:'→';color:var(--gold);font-weight:700;flex-shrink:0;font-size:.78rem;margin-top:.05em}
+.dbox p{font-size:.83rem;color:var(--slate);line-height:1.65;margin-bottom:.6rem}
+.full-col{grid-column:1/-1}
+.two-col-in{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:.75rem}
+.hlight{background:var(--navy);border-radius:var(--r);padding:1.25rem;color:var(--white);margin-top:1.4rem}
+.hlight h4{color:var(--gold2);font-size:.88rem;font-weight:700;margin-bottom:.65rem}
+.hlight ul{list-style:none;display:flex;flex-direction:column;gap:.38rem}
+.hlight ul li{font-size:.83rem;color:rgba(255,255,255,.82);display:flex;align-items:flex-start;gap:8px;line-height:1.45}
+.hlight ul li::before{content:'✓';color:var(--gold2);font-weight:700;flex-shrink:0}
 
-  .nav-links {
-    display: flex; align-items: center; gap: 0.25rem;
-    list-style: none;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  .nav-links a {
-    display: block; padding: 0.5rem 0.85rem;
-    text-decoration: none; color: var(--navy);
-    font-size: 0.875rem; font-weight: 500;
-    border-radius: 8px;
-    transition: background 0.2s, color 0.2s;
-  }
-  .nav-links a:hover { background: var(--gold-pale); color: var(--gold); }
+/* ───── REVIEWS ───── */
+#reviews{background:var(--navy)}
+#reviews .lbl{color:var(--gold2)}
+#reviews h2{color:var(--white)}
+#reviews .sub{color:rgba(255,255,255,.6)}
+.rev-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.2rem}
+.rc{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:var(--rl);padding:1.65rem;transition:all .25s}
+.rc:hover{background:rgba(255,255,255,.11);transform:translateY(-3px)}
+.rc-stars{display:flex;gap:3px;margin-bottom:.9rem}
+.rc-stars span{color:var(--gold);font-size:.95rem}
+.rc-txt{font-size:.88rem;color:rgba(255,255,255,.83);line-height:1.65;margin-bottom:1.1rem;font-style:italic}
+.rc-txt::before{content:'\201C';color:var(--gold);font-size:1.25rem;font-family:'Fraunces',serif;line-height:0;vertical-align:-.2em}
+.rc-info{display:flex;align-items:center;gap:11px}
+.rc-av{width:39px;height:39px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--navy2));display:grid;place-items:center;font-family:'Fraunces',serif;font-size:.95rem;font-weight:700;color:var(--white);flex-shrink:0}
+.rc-name{font-weight:600;color:var(--white);font-size:.88rem}
+.rc-loc{font-size:.73rem;color:rgba(255,255,255,.5)}
 
-  /* Dropdown */
-  .dropdown { position: relative; }
-  .dropdown > a {
-    display: flex; align-items: center; gap: 4px; cursor: pointer;
-  }
-  .dropdown > a svg { width: 14px; height: 14px; transition: transform 0.25s; fill: currentColor; }
-  .dropdown:hover > a svg, .dropdown.open > a svg { transform: rotate(180deg); }
+/* ───── FAQ ───── */
+#faq{background:var(--cream)}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.fi{background:var(--white);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:box-shadow .2s}
+.fi:hover{box-shadow:0 4px 18px var(--sh)}
+.fq{width:100%;text-align:left;background:none;border:none;padding:1.1rem 1.35rem;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;font-family:'DM Sans',sans-serif;font-size:.88rem;font-weight:600;color:var(--navy);line-height:1.4}
+.fq:hover{color:var(--gold)}
+.fq-ico{width:27px;height:27px;border-radius:50%;background:var(--gold-pale);display:grid;place-items:center;flex-shrink:0;transition:all .25s}
+.fq-ico svg{width:13px;height:13px;fill:var(--gold);transition:transform .25s}
+.fi.open .fq-ico{background:var(--gold)}
+.fi.open .fq-ico svg{fill:var(--white);transform:rotate(45deg)}
+.fa{overflow:hidden;max-height:0;transition:max-height .35s ease}
+.fi.open .fa{max-height:400px}
+.fa-in{padding:0 1.35rem 1.15rem;font-size:.86rem;color:var(--slate);line-height:1.7;border-top:1px solid var(--border);padding-top:.9rem}
 
-  .dropdown-menu {
-    position: absolute; top: calc(100% + 8px); left: 50%;
-    transform: translateX(-50%) translateY(8px);
-    background: var(--warm-white);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    box-shadow: 0 10px 40px var(--shadow-lg);
-    padding: 0.5rem;
-    min-width: 220px;
-    list-style: none;
-    opacity: 0; visibility: hidden;
-    transition: all 0.2s ease;
-    pointer-events: none;
-  }
-  .dropdown:hover .dropdown-menu,
-  .dropdown.open .dropdown-menu {
-    opacity: 1; visibility: visible;
-    transform: translateX(-50%) translateY(0);
-    pointer-events: auto;
-  }
-  .dropdown-menu li a {
-    display: flex; align-items: center; gap: 10px;
-    padding: 0.6rem 0.85rem;
-    border-radius: 8px; font-size: 0.85rem;
-    color: var(--navy); white-space: nowrap;
-  }
-  .dropdown-menu li a .dm-icon {
-    width: 28px; height: 28px; border-radius: 7px;
-    background: var(--gold-pale); display: grid;
-    place-items: center; flex-shrink: 0;
-  }
-  .dropdown-menu li a .dm-icon svg { width: 14px; height: 14px; fill: var(--gold); }
+/* ───── CONTACT ───── */
+#contact{background:var(--white)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.contact-items{display:flex;flex-direction:column;gap:1.1rem;margin-top:1.75rem}
+.ci{display:flex;align-items:flex-start;gap:15px;padding:1.1rem;background:var(--cream);border-radius:var(--r);border:1px solid var(--border)}
+.ci-ico{width:42px;height:42px;border-radius:10px;background:var(--navy);display:grid;place-items:center;flex-shrink:0}
+.ci-ico svg{width:19px;height:19px;fill:var(--gold)}
+.ci-lbl{font-size:.72rem;color:var(--slate2);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.2rem}
+.ci-val{font-size:.93rem;font-weight:600;color:var(--navy)}
+.ci-val a{color:var(--navy);text-decoration:none}
+.ci-val a:hover{color:var(--gold)}
+.cta-box{background:var(--navy);border-radius:var(--rl);padding:2.25rem;color:var(--white);position:relative;overflow:hidden;margin-top:1.4rem}
+.cta-box::before{content:'';position:absolute;bottom:-40px;right:-40px;width:160px;height:160px;background:rgba(201,147,58,.2);border-radius:50%}
+.cta-box h3{font-family:'Fraunces',serif;font-size:1.25rem;margin-bottom:.45rem;position:relative;z-index:1}
+.cta-box p{font-size:.86rem;color:rgba(255,255,255,.7);margin-bottom:1.4rem;position:relative;z-index:1;line-height:1.65}
+.cta-tel{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--white);padding:.85rem 1.6rem;border-radius:10px;text-decoration:none;font-weight:700;font-size:.97rem;transition:all .25s;position:relative;z-index:1}
+.cta-tel:hover{background:var(--gold2);transform:translateY(-2px)}
+.area-card{background:var(--cream);border:1px solid var(--border);border-radius:var(--rl);padding:1.85rem;text-align:center;margin-top:1.4rem}
+.area-ico{width:60px;height:60px;border-radius:14px;background:var(--gold-pale);display:grid;place-items:center;margin:0 auto 1rem}
+.area-ico svg{width:30px;height:30px;fill:var(--gold)}
+.area-card h3{font-family:'Fraunces',serif;font-size:1.05rem;margin-bottom:.45rem}
+.area-card p{font-size:.84rem;color:var(--slate);line-height:1.6}
+.tags{display:flex;flex-wrap:wrap;gap:.45rem;justify-content:center;margin-top:.9rem}
+.tag{background:var(--white);border:1px solid var(--border);padding:.32rem .75rem;border-radius:20px;font-size:.77rem;font-weight:500;color:var(--slate)}
 
-  .nav-cta {
-    background: var(--navy) !important;
-    color: var(--warm-white) !important;
-    border-radius: 8px !important;
-    padding: 0.5rem 1.1rem !important;
-    font-weight: 600 !important;
-  }
-  .nav-cta:hover { background: var(--gold) !important; color: var(--warm-white) !important; }
+/* ───── FOOTER ───── */
+footer{background:var(--navy);color:rgba(255,255,255,.68);padding:3rem 1.5rem 1.5rem}
+.ft{max-width:1100px;margin:0 auto}
+.ft-top{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:2.5rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:1.4rem}
+.ft-logo{display:flex;align-items:center;gap:10px;margin-bottom:.75rem}
+.ft-logo-ico{width:34px;height:34px;background:var(--gold);border-radius:8px;display:grid;place-items:center;flex-shrink:0}
+.ft-logo-ico svg{width:17px;height:17px;fill:var(--white)}
+.ft-logo-name{font-family:'Fraunces',serif;font-size:1rem;color:var(--white);font-weight:700}
+.ft-tag{font-size:.84rem;line-height:1.6;margin-bottom:1.1rem}
+.ft-phone{display:inline-flex;align-items:center;gap:7px;color:var(--gold2);text-decoration:none;font-weight:600;font-size:.87rem}
+.ft-phone:hover{color:var(--white)}
+.ft-col-t{color:var(--white);font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.85rem}
+.ft-links{list-style:none;display:flex;flex-direction:column;gap:.45rem}
+.ft-links a{color:rgba(255,255,255,.62);text-decoration:none;font-size:.84rem;transition:color .2s}
+.ft-links a:hover{color:var(--gold2)}
+.ft-bot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.6rem;font-size:.78rem;color:rgba(255,255,255,.38)}
+.ft-bot a{color:rgba(255,255,255,.45);text-decoration:none}
+.ft-bot a:hover{color:var(--gold2)}
 
-  /* Hamburger */
-  .hamburger {
-    display: none; flex-direction: column;
-    gap: 5px; cursor: pointer; padding: 4px; background: none; border: none;
-  }
-  .hamburger span {
-    width: 24px; height: 2px; background: var(--navy);
-    border-radius: 2px; transition: all 0.3s;
-    display: block;
-  }
-  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  .hamburger.open span:nth-child(2) { opacity: 0; }
-  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-  /* Mobile nav */
-  .mobile-nav {
-    display: none;
-    position: fixed; top: 70px; left: 0; right: 0;
-    background: var(--warm-white);
-    border-bottom: 1px solid var(--border);
-    box-shadow: 0 10px 30px var(--shadow-lg);
-    padding: 1rem 1.5rem 1.5rem;
-    z-index: 999;
-    flex-direction: column; gap: 0.25rem;
-    max-height: calc(100vh - 70px); overflow-y: auto;
-  }
-  .mobile-nav.open { display: flex; }
-  .mobile-nav a {
-    display: block; padding: 0.75rem 1rem;
-    text-decoration: none; color: var(--navy);
-    font-size: 0.95rem; font-weight: 500;
-    border-radius: 8px;
-    transition: background 0.2s;
-  }
-  .mobile-nav a:hover { background: var(--gold-pale); color: var(--gold); }
-  .mobile-nav .mobile-dropdown-label {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 0.75rem 1rem; cursor: pointer;
-    font-size: 0.95rem; font-weight: 500; border-radius: 8px;
-    color: var(--navy);
-  }
-  .mobile-nav .mobile-dropdown-label:hover { background: var(--gold-pale); color: var(--gold); }
-  .mobile-dropdown-sub {
-    display: none; padding-left: 1rem; flex-direction: column; gap: 0.15rem;
-  }
-  .mobile-dropdown-sub.open { display: flex; }
-  .mobile-nav-cta {
-    margin-top: 0.5rem;
-    background: var(--navy) !important; color: white !important;
-    text-align: center; border-radius: 10px !important; font-weight: 600 !important;
-  }
-
-  /* ── HERO ── */
-  #home {
-    min-height: 100vh;
-    padding: 100px 1.5rem 5rem;
-    display: flex; align-items: center;
-    background: linear-gradient(135deg, #FDFAF4 0%, #FEF8EC 40%, #F8F2E8 100%);
-    position: relative; overflow: hidden;
-  }
-  #home::before {
-    content: '';
-    position: absolute; top: -60px; right: -80px;
-    width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(201,147,58,0.12) 0%, transparent 70%);
-    border-radius: 50%; pointer-events: none;
-  }
-  #home::after {
-    content: '';
-    position: absolute; bottom: -60px; left: -80px;
-    width: 400px; height: 400px;
-    background: radial-gradient(circle, rgba(15,34,64,0.06) 0%, transparent 70%);
-    border-radius: 50%; pointer-events: none;
-  }
-
-  .hero-inner {
-    max-width: 1100px; margin: 0 auto; width: 100%;
-    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
-    align-items: center; position: relative; z-index: 1;
-  }
-
-  .hero-badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: var(--gold-pale); border: 1px solid rgba(201,147,58,0.3);
-    color: var(--gold); border-radius: 30px;
-    padding: 0.4rem 1rem; font-size: 0.8rem; font-weight: 600;
-    margin-bottom: 1.25rem; letter-spacing: 0.04em;
-  }
-  .hero-badge::before {
-    content: ''; width: 8px; height: 8px; background: var(--gold);
-    border-radius: 50%; display: inline-block; animation: pulse 2s infinite;
-  }
-  @keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.5; transform: scale(0.8); }
-  }
-
-  h1 {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(2.2rem, 5vw, 3.4rem);
-    font-weight: 700; line-height: 1.15;
-    color: var(--navy); margin-bottom: 1.25rem;
-  }
-  h1 em { font-style: italic; color: var(--gold); }
-
-  .hero-desc {
-    font-size: 1.05rem; color: var(--slate);
-    margin-bottom: 2rem; max-width: 480px; line-height: 1.7;
-  }
-
-  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
-  .btn-primary {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: var(--navy); color: white;
-    padding: 0.85rem 1.75rem; border-radius: 10px;
-    text-decoration: none; font-weight: 600; font-size: 0.95rem;
-    transition: all 0.25s; box-shadow: 0 4px 20px rgba(15,34,64,0.25);
-  }
-  .btn-primary:hover { background: var(--gold); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(201,147,58,0.3); }
-  .btn-secondary {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: transparent; color: var(--navy);
-    padding: 0.85rem 1.75rem; border-radius: 10px;
-    text-decoration: none; font-weight: 600; font-size: 0.95rem;
-    border: 1.5px solid var(--navy);
-    transition: all 0.25s;
-  }
-  .btn-secondary:hover { background: var(--navy); color: white; }
-
-  .hero-stats {
-    display: flex; gap: 1.5rem; flex-wrap: wrap;
-  }
-  .stat-item { display: flex; flex-direction: column; }
-  .stat-num {
-    font-family: 'Fraunces', serif;
-    font-size: 1.8rem; font-weight: 700; color: var(--navy); line-height: 1;
-  }
-  .stat-label { font-size: 0.78rem; color: var(--slate-light); font-weight: 500; margin-top: 3px; }
-
-  /* Hero visual */
-  .hero-visual {
-    display: flex; justify-content: center; align-items: center;
-    position: relative;
-  }
-  .hero-card-main {
-    background: var(--warm-white);
-    border-radius: var(--radius-lg);
-    padding: 2rem;
-    box-shadow: 0 20px 60px var(--shadow-lg);
-    width: 100%; max-width: 380px;
-    position: relative; z-index: 2;
-    border: 1px solid var(--border);
-  }
-  .hero-card-top {
-    display: flex; align-items: center; gap: 12px;
-    padding-bottom: 1.25rem; margin-bottom: 1.25rem;
-    border-bottom: 1px solid var(--border);
-  }
-  .hero-card-icon {
-    width: 52px; height: 52px; border-radius: 12px;
-    background: var(--navy); display: grid; place-items: center; flex-shrink: 0;
-  }
-  .hero-card-icon svg { width: 26px; height: 26px; fill: var(--gold); }
-  .hero-card-title { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 600; }
-  .hero-card-sub { font-size: 0.8rem; color: var(--slate-light); }
-
-  .hero-service-list { display: flex; flex-direction: column; gap: 0.6rem; }
-  .service-chip {
-    display: flex; align-items: center; gap: 10px;
-    padding: 0.6rem 0.9rem; border-radius: 8px;
-    background: var(--cream); font-size: 0.85rem; font-weight: 500;
-    color: var(--navy); border: 1px solid var(--border);
-  }
-  .service-chip::before {
-    content: '✓'; display: grid; place-items: center;
-    width: 20px; height: 20px; border-radius: 50%;
-    background: var(--gold-pale); color: var(--gold);
-    font-size: 0.7rem; font-weight: 700; flex-shrink: 0;
-  }
-
-  .hero-float-badge {
-    position: absolute; top: -20px; right: -20px;
-    background: var(--gold); color: white;
-    border-radius: 12px; padding: 0.75rem 1rem;
-    box-shadow: 0 8px 24px rgba(201,147,58,0.4);
-    font-size: 0.8rem; font-weight: 700;
-    text-align: center; z-index: 3;
-    animation: float 3s ease-in-out infinite;
-  }
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
-  }
-  .hero-float-badge span { display: block; font-size: 1.2rem; }
-
-  /* ── SECTION COMMONS ── */
-  section { padding: 5rem 1.5rem; }
-  .section-inner { max-width: 1100px; margin: 0 auto; }
-  .section-label {
-    display: inline-block; font-size: 0.75rem; font-weight: 700;
-    letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold);
-    margin-bottom: 0.75rem;
-  }
-  h2 {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(1.8rem, 4vw, 2.6rem);
-    font-weight: 700; color: var(--navy); line-height: 1.2;
-    margin-bottom: 1rem;
-  }
-  .section-desc {
-    font-size: 1rem; color: var(--slate); max-width: 580px; line-height: 1.7;
-    margin-bottom: 3rem;
-  }
-
-  /* ── ABOUT ── */
-  #about { background: var(--warm-white); }
-  .about-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
-  }
-  .about-features { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 2rem; }
-  .about-feature {
-    display: flex; align-items: flex-start; gap: 16px;
-    padding: 1.25rem; border-radius: var(--radius);
-    background: var(--cream); border: 1px solid var(--border);
-    transition: box-shadow 0.25s;
-  }
-  .about-feature:hover { box-shadow: 0 4px 20px var(--shadow); }
-  .af-icon {
-    width: 44px; height: 44px; border-radius: 10px;
-    background: var(--navy); display: grid; place-items: center; flex-shrink: 0;
-  }
-  .af-icon svg { width: 22px; height: 22px; fill: var(--gold); }
-  .af-title { font-weight: 600; margin-bottom: 0.2rem; font-size: 0.95rem; }
-  .af-desc { font-size: 0.85rem; color: var(--slate); line-height: 1.5; }
-
-  .about-visual {
-    display: flex; justify-content: center;
-  }
-  .about-card {
-    background: var(--navy); border-radius: var(--radius-lg);
-    padding: 2.5rem; color: white; width: 100%; max-width: 380px;
-    position: relative; overflow: hidden;
-  }
-  .about-card::before {
-    content: '';
-    position: absolute; top: -50px; right: -50px;
-    width: 200px; height: 200px;
-    background: rgba(201,147,58,0.15); border-radius: 50%;
-  }
-  .about-card-quote {
-    font-family: 'Fraunces', serif;
-    font-size: 1.1rem; line-height: 1.6;
-    font-style: italic; margin-bottom: 2rem; position: relative; z-index: 1;
-  }
-  .about-card-quote::before { content: '"'; font-size: 3rem; color: var(--gold); line-height: 0; vertical-align: -0.5em; display: block; margin-bottom: 0.5rem; }
-  .about-card-items { display: flex; flex-direction: column; gap: 1rem; position: relative; z-index: 1; }
-  .aci {
-    display: flex; align-items: center; gap: 12px;
-    padding: 1rem; border-radius: 10px;
-    background: rgba(255,255,255,0.08);
-  }
-  .aci-num { font-family: 'Fraunces', serif; font-size: 1.6rem; font-weight: 700; color: var(--gold); width: 50px; flex-shrink: 0; }
-  .aci-text { font-size: 0.85rem; color: rgba(255,255,255,0.8); font-weight: 500; }
-
-  /* ── SERVICES ── */
-  #services { background: var(--cream); }
-  .services-grid {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 1.5rem;
-  }
-  .service-card {
-    background: var(--warm-white);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 2rem; transition: all 0.3s;
-    position: relative; overflow: hidden;
-  }
-  .service-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 40px var(--shadow-md);
-    border-color: var(--gold-light);
-  }
-  .service-card-accent {
-    position: absolute; top: 0; left: 0; right: 0; height: 4px;
-    background: linear-gradient(90deg, var(--navy), var(--gold));
-    transform: scaleX(0); transform-origin: left;
-    transition: transform 0.3s;
-  }
-  .service-card:hover .service-card-accent { transform: scaleX(1); }
-  .sc-icon {
-    width: 56px; height: 56px; border-radius: 14px;
-    background: var(--gold-pale); display: grid; place-items: center;
-    margin-bottom: 1.25rem;
-  }
-  .sc-icon svg { width: 28px; height: 28px; fill: var(--gold); }
-  .sc-title {
-    font-family: 'Fraunces', serif;
-    font-size: 1.15rem; font-weight: 600; margin-bottom: 0.6rem; color: var(--navy);
-  }
-  .sc-desc { font-size: 0.88rem; color: var(--slate); line-height: 1.65; margin-bottom: 1.25rem; }
-  .sc-list { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
-  .sc-list li {
-    font-size: 0.83rem; color: var(--slate); display: flex; align-items: center; gap: 8px;
-  }
-  .sc-list li::before {
-    content: ''; width: 6px; height: 6px; border-radius: 50%;
-    background: var(--gold); flex-shrink: 0;
-  }
-
-  /* Service detail sections */
-  .service-detail {
-    background: var(--warm-white);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 2.5rem; margin-top: 1.5rem;
-  }
-  .service-detail h3 {
-    font-family: 'Fraunces', serif;
-    font-size: 1.4rem; color: var(--navy); margin-bottom: 1rem;
-    display: flex; align-items: center; gap: 12px;
-  }
-  .service-detail h3 svg { width: 24px; height: 24px; fill: var(--gold); flex-shrink: 0; }
-  .service-detail p { font-size: 0.9rem; color: var(--slate); line-height: 1.7; margin-bottom: 1rem; }
-  .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem; }
-  .detail-box {
-    background: var(--cream); border-radius: var(--radius); padding: 1.25rem;
-    border: 1px solid var(--border);
-  }
-  .detail-box h4 { font-size: 0.88rem; font-weight: 600; color: var(--navy); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 8px; }
-  .detail-box ul { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
-  .detail-box ul li { font-size: 0.83rem; color: var(--slate); display: flex; align-items: flex-start; gap: 8px; }
-  .detail-box ul li::before { content: '→'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
-
-  /* ── REVIEWS ── */
-  #reviews { background: var(--navy); }
-  #reviews .section-label { color: var(--gold-light); }
-  #reviews h2 { color: white; }
-  #reviews .section-desc { color: rgba(255,255,255,0.6); }
-  .reviews-grid {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-    gap: 1.25rem;
-  }
-  .review-card {
-    background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: var(--radius-lg); padding: 1.75rem;
-    transition: all 0.25s;
-  }
-  .review-card:hover {
-    background: rgba(255,255,255,0.1);
-    transform: translateY(-3px);
-  }
-  .review-stars { display: flex; gap: 3px; margin-bottom: 1rem; }
-  .review-stars span { color: var(--gold); font-size: 1rem; }
-  .review-text {
-    font-size: 0.9rem; color: rgba(255,255,255,0.82);
-    line-height: 1.65; margin-bottom: 1.25rem; font-style: italic;
-  }
-  .review-text::before { content: '"'; color: var(--gold); font-size: 1.3rem; font-family: 'Fraunces', serif; }
-  .reviewer-info { display: flex; align-items: center; gap: 12px; }
-  .reviewer-avatar {
-    width: 40px; height: 40px; border-radius: 50%;
-    background: linear-gradient(135deg, var(--gold), var(--navy));
-    display: grid; place-items: center;
-    font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 700; color: white;
-    flex-shrink: 0;
-  }
-  .reviewer-name { font-weight: 600; color: white; font-size: 0.9rem; }
-  .reviewer-sub { font-size: 0.75rem; color: rgba(255,255,255,0.5); }
-
-  /* ── FAQ ── */
-  #faq { background: var(--cream); }
-  .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-  .faq-item {
-    background: var(--warm-white); border: 1px solid var(--border);
-    border-radius: var(--radius); overflow: hidden;
-    transition: box-shadow 0.2s;
-  }
-  .faq-item:hover { box-shadow: 0 4px 20px var(--shadow); }
-  .faq-question {
-    width: 100%; text-align: left; background: none; border: none;
-    padding: 1.25rem 1.5rem; cursor: pointer;
-    display: flex; align-items: center; justify-content: space-between; gap: 12px;
-    font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
-    font-weight: 600; color: var(--navy);
-  }
-  .faq-question:hover { color: var(--gold); }
-  .faq-q-icon {
-    width: 28px; height: 28px; border-radius: 50%;
-    background: var(--gold-pale); display: grid; place-items: center;
-    flex-shrink: 0; transition: all 0.25s;
-  }
-  .faq-q-icon svg { width: 14px; height: 14px; fill: var(--gold); transition: transform 0.25s; }
-  .faq-item.open .faq-q-icon { background: var(--gold); }
-  .faq-item.open .faq-q-icon svg { fill: white; transform: rotate(45deg); }
-  .faq-answer {
-    overflow: hidden; max-height: 0;
-    transition: max-height 0.35s ease, padding 0.25s;
-  }
-  .faq-item.open .faq-answer { max-height: 300px; }
-  .faq-answer-inner {
-    padding: 0 1.5rem 1.25rem;
-    font-size: 0.875rem; color: var(--slate); line-height: 1.7;
-    border-top: 1px solid var(--border);
-    padding-top: 1rem;
-  }
-
-  /* ── CONTACT ── */
-  #contact { background: var(--warm-white); }
-  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-  .contact-info { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 2rem; }
-  .contact-item {
-    display: flex; align-items: flex-start; gap: 16px;
-    padding: 1.25rem; background: var(--cream);
-    border-radius: var(--radius); border: 1px solid var(--border);
-  }
-  .ci-icon {
-    width: 44px; height: 44px; border-radius: 10px;
-    background: var(--navy); display: grid; place-items: center; flex-shrink: 0;
-  }
-  .ci-icon svg { width: 20px; height: 20px; fill: var(--gold); }
-  .ci-label { font-size: 0.75rem; color: var(--slate-light); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.25rem; }
-  .ci-value { font-size: 0.95rem; font-weight: 600; color: var(--navy); }
-  .ci-value a { color: var(--navy); text-decoration: none; }
-  .ci-value a:hover { color: var(--gold); }
-
-  .contact-cta-box {
-    background: var(--navy); border-radius: var(--radius-lg);
-    padding: 2.5rem; color: white; position: relative; overflow: hidden;
-    margin-top: 1.5rem;
-  }
-  .contact-cta-box::before {
-    content: ''; position: absolute; bottom: -40px; right: -40px;
-    width: 160px; height: 160px;
-    background: rgba(201,147,58,0.2); border-radius: 50%;
-  }
-  .contact-cta-box h3 {
-    font-family: 'Fraunces', serif; font-size: 1.3rem;
-    margin-bottom: 0.5rem; position: relative; z-index: 1;
-  }
-  .contact-cta-box p { font-size: 0.88rem; color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; position: relative; z-index: 1; line-height: 1.6; }
-  .cta-phone-btn {
-    display: inline-flex; align-items: center; gap: 10px;
-    background: var(--gold); color: white;
-    padding: 0.9rem 1.75rem; border-radius: 10px;
-    text-decoration: none; font-weight: 700; font-size: 1rem;
-    transition: all 0.25s; position: relative; z-index: 1;
-  }
-  .cta-phone-btn:hover { background: var(--gold-light); transform: translateY(-2px); }
-
-  /* Service area map placeholder */
-  .service-area-card {
-    background: var(--cream); border: 1px solid var(--border);
-    border-radius: var(--radius-lg); padding: 2rem;
-    display: flex; flex-direction: column; align-items: center; text-align: center;
-  }
-  .map-icon-wrap {
-    width: 64px; height: 64px; border-radius: 16px;
-    background: var(--gold-pale); display: grid; place-items: center; margin-bottom: 1rem;
-  }
-  .map-icon-wrap svg { width: 32px; height: 32px; fill: var(--gold); }
-  .service-area-card h3 { font-family: 'Fraunces', serif; font-size: 1.1rem; margin-bottom: 0.5rem; }
-  .service-area-card p { font-size: 0.85rem; color: var(--slate); line-height: 1.6; }
-  .service-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-top: 1rem; }
-  .service-tag {
-    background: var(--warm-white); border: 1px solid var(--border);
-    padding: 0.35rem 0.8rem; border-radius: 20px;
-    font-size: 0.78rem; font-weight: 500; color: var(--slate);
-  }
-
-  /* Service area map */
-  .service-area-map {
-    background: var(--warm-white);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  .service-area-map h3 {
-    font-family: 'Fraunces', serif;
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-    color: var(--navy);
-  }
-  .map-container {
-    border-radius: var(--radius);
-    overflow: hidden;
-    box-shadow: 0 4px 20px var(--shadow);
-  }
-  .map-info {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-  .map-info p {
-    font-size: 0.9rem;
-    color: var(--slate);
-    line-height: 1.6;
-    margin: 0;
-  }
-  .map-info strong {
-    color: var(--navy);
-    font-weight: 600;
-  }
-
-  /* ── FOOTER ── */
-  footer {
-    background: var(--navy); color: rgba(255,255,255,0.7);
-    padding: 3rem 1.5rem 1.5rem;
-  }
-  .footer-inner { max-width: 1100px; margin: 0 auto; }
-  .footer-top {
-    display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 3rem;
-    padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.1);
-    margin-bottom: 1.5rem;
-  }
-  .footer-brand-name {
-    font-family: 'Fraunces', serif; font-size: 1.15rem;
-    color: white; font-weight: 700; margin-bottom: 0.75rem;
-    display: flex; align-items: center; gap: 10px;
-  }
-  .footer-brand-name .fb-icon {
-    width: 36px; height: 36px; background: var(--gold);
-    border-radius: 8px; display: grid; place-items: center; flex-shrink: 0;
-  }
-  .footer-brand-name .fb-icon svg { width: 18px; height: 18px; fill: white; }
-  .footer-tagline { font-size: 0.85rem; line-height: 1.6; margin-bottom: 1.25rem; }
-  .footer-phone-link {
-    display: inline-flex; align-items: center; gap: 8px;
-    color: var(--gold-light); text-decoration: none; font-weight: 600;
-    font-size: 0.9rem;
-  }
-  .footer-phone-link:hover { color: white; }
-  .footer-col-title { color: white; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem; }
-  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
-  .footer-links a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.875rem; transition: color 0.2s; }
-  .footer-links a:hover { color: var(--gold-light); }
-  .footer-bottom {
-    display: flex; align-items: center; justify-content: space-between;
-    flex-wrap: wrap; gap: 0.75rem;
-    font-size: 0.8rem; color: rgba(255,255,255,0.4);
-  }
-  .footer-bottom a { color: rgba(255,255,255,0.5); text-decoration: none; }
-  .footer-bottom a:hover { color: var(--gold-light); }
-
-  /* ── FLOATING CALL BUTTON ── */
-  .floating-call-btn {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: var(--navy);
-    color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    box-shadow: 0 8px 25px rgba(15, 34, 64, 0.3);
-    transition: all 0.3s ease;
-    z-index: 1000;
-    font-size: 24px;
-  }
-  .floating-call-btn:hover {
-    background: var(--gold);
-    transform: translateY(-3px);
-    box-shadow: 0 12px 35px rgba(201, 147, 58, 0.4);
-  }
-  .floating-call-btn:active {
-    transform: translateY(-1px);
-  }
-
-  /* Mobile-first critical CSS optimizations */
-  @media (max-width: 600px) {
-    /* Reduce font loading impact */
-    :root {
-      --font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      --font-secondary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    }
-    
-    /* Optimize hero section for mobile FCP */
-    .hero-inner {
-      min-height: auto;
-      padding: 2rem 0;
-    }
-    
-    .hero-content {
-      min-height: auto;
-    }
-    
-    /* Reduce animation delays for mobile */
-    .hero-content > * {
-      animation-delay: 0.1s;
-    }
-    
-    /* Optimize images for mobile */
-    .hero-visual {
-      min-height: 300px;
-    }
-    
-    /* Reduce shadow effects for mobile performance */
-    .hero-card-main {
-      box-shadow: 0 4px 15px rgba(15, 34, 64, 0.1);
-    }
-  }
-
-  /* Mobile FCP optimizations - preserve functionality */
-  @media (max-width: 600px) {
-    /* Optimize font loading for mobile */
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    }
-    
-    /* Reduce hero section complexity for mobile */
-    .hero-inner {
-      min-height: auto;
-      padding: 3rem 1.5rem 2rem;
-    }
-    
-    /* Optimize animations for mobile */
-    .hero-content > * {
-      animation-delay: 0s;
-      animation-duration: 0.3s;
-    }
-    
-    /* Simplify hero visual for mobile */
-    .hero-visual {
-      min-height: 350px;
-    }
-    
-    .hero-card-main {
-      transform: none;
-      animation: none;
-    }
-    
-    /* Reduce shadow complexity */
-    .hero-card-main {
-      box-shadow: 0 4px 15px rgba(15, 34, 64, 0.1);
-    }
-    
-    /* Optimize stats display */
-    .hero-stats {
-      gap: 0.75rem;
-    }
-    
-    .stat-item {
-      padding: 0.75rem;
-    }
-  }
-
-  /* ── MOBILE RESPONSIVE ── */
-  @media (max-width: 900px) {
-    .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
-    .hero-visual { order: 2; }
-    .hero-stats { order: 3; }
-    .about-grid { grid-template-columns: 1fr; }
-    .contact-grid { grid-template-columns: 1fr; }
-    .faq-grid { grid-template-columns: 1fr; }
-    .detail-grid { grid-template-columns: 1fr; }
-    .footer-top { grid-template-columns: 1fr 1fr; }
-    .nav-links { display: none; }
-    .hamburger { display: flex; }
-    .nav-logo img { margin-left: 0 !important; }
-  }
-  @media (max-width: 600px) {
-    section { padding: 3.5rem 1.25rem; }
-    .hero-btns { flex-direction: column; }
-    .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
-    .services-grid { grid-template-columns: 1fr; }
-    .reviews-grid { grid-template-columns: 1fr; }
-    .footer-top { grid-template-columns: 1fr; gap: 2rem; }
-    .hero-stats { gap: 1rem; }
-    h1 { font-size: 2rem; }
-  }
+/* ───── RESPONSIVE ───── */
+@media(max-width:920px){
+  .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+  .hero-visual{order:-1}
+  .det-grid{grid-template-columns:1fr}
+  .two-col-in{grid-template-columns:1fr}
+  .faq-grid{grid-template-columns:1fr}
+  .ft-top{grid-template-columns:1fr 1fr}
+  .nav-links{display:none}
+  .burger{display:flex}
+}
+@media(max-width:600px){
+  section,.det-sec{padding:3.25rem 1.25rem}
+  .hero-btns{flex-direction:column}
+  .btn-p,.btn-s{width:100%;justify-content:center}
+  .svc-grid,.rev-grid{grid-template-columns:1fr}
+  .ft-top{grid-template-columns:1fr;gap:1.75rem}
+  h1{font-size:1.95rem}
+}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .5s ease,transform .5s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
 </style>
 </head>
 <body>
 
-<!-- Critical above-the-fold content -->
-<header id="hero" style="background: linear-gradient(135deg, var(--cream) 0%, var(--warm-white) 100%);">
-
-<!-- ── NAVBAR ── -->
+<!-- ══ NAVBAR ══ -->
 <nav id="navbar">
   <a href="#home" class="nav-logo">
-    <img src="assets/images/logo.webp" alt="Car Key Replacement Atlantic Beach" style="width: 100px; height: 100px; border-radius: 10px; margin-left: 260px;" loading="eager" fetchpriority="high">
+    <div class="nav-logo-icon">
+      <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3" fill="none" stroke="#C9933A" stroke-width="2"/></svg>
+    </div>
+    <div class="nav-logo-text">
+      <span>Car Key Replacement</span>
+      <span>Atlantic Beach, FL</span>
+    </div>
   </a>
-
   <ul class="nav-links">
     <li><a href="#home">Home</a></li>
     <li class="dropdown">
-      <a href="#services">Services
-        <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-      </a>
-      <ul class="dropdown-menu">
-        <li><a href="#ignition">
-          <span class="dm-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></span>
-          Ignition Repair & Replacement
-        </a></li>
-        <li><a href="#keyfob">
-          <span class="dm-icon"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V5a4 4 0 018 0v2"/><line x1="12" y1="12" x2="12" y2="16"/></svg></span>
-          Key Fob & Push-to-Start
-        </a></li>
-        <li><a href="#mobile">
-          <span class="dm-icon"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span>
-          Mobile Key Replacement
-        </a></li>
-        <li><a href="#cutting">
-          <span class="dm-icon"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg></span>
-          Key Cutting & Programming
-        </a></li>
+      <a href="#services">Services <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></a>
+      <ul class="dd-menu">
+        <li><a href="#ignition"><span class="dd-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></span>Ignition Repair &amp; Replacement</a></li>
+        <li><a href="#keyfob"><span class="dd-ico"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V5a4 4 0 018 0v2"/><line x1="12" y1="12" x2="12" y2="16"/></svg></span>Key Fob &amp; Push-to-Start</a></li>
+        <li><a href="#mobile"><span class="dd-ico"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span>Mobile Key Replacement</a></li>
+        <li><a href="#cutting"><span class="dd-ico"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg></span>Key Cutting &amp; Programming</a></li>
       </ul>
     </li>
     <li><a href="#about">About</a></li>
     <li><a href="#contact">Contact Us</a></li>
     <li><a href="#faq">FAQ</a></li>
-    <li><a href="tel:9048489429" class="nav-cta ">📞 904-848-9429</a></li>
+    <li><a href="tel:9048489429" class="nav-cta">📞 904-848-9429</a></li>
   </ul>
-
-  <button class="hamburger" id="hamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 
 <!-- Mobile Nav -->
-<div class="mobile-nav" id="mobileNav">
-  <a href="#home" onclick="closeMobile()">Home</a>
+<div class="mob-nav" id="mobNav">
+  <a href="#home" onclick="closeM()">Home</a>
   <div>
-    <div class="mobile-dropdown-label" onclick="toggleMobileSub(this)">
-      Services
-      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-    </div>
-    <div class="mobile-dropdown-sub">
-      <a href="#ignition" onclick="closeMobile()">— Ignition Repair & Replacement</a>
-      <a href="#keyfob" onclick="closeMobile()">— Key Fob & Push-to-Start</a>
-      <a href="#mobile" onclick="closeMobile()">— Mobile Key Replacement</a>
-      <a href="#cutting" onclick="closeMobile()">— Key Cutting & Programming</a>
+    <div class="mob-dd-btn" onclick="toggleSub(this)">Services <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+    <div class="mob-sub">
+      <a href="#ignition" onclick="closeM()">— Ignition Repair &amp; Replacement</a>
+      <a href="#keyfob" onclick="closeM()">— Key Fob &amp; Push-to-Start</a>
+      <a href="#mobile" onclick="closeM()">— Mobile Key Replacement</a>
+      <a href="#cutting" onclick="closeM()">— Key Cutting &amp; Programming</a>
     </div>
   </div>
-  <a href="#about" onclick="closeMobile()">About</a>
-  <a href="#contact" onclick="closeMobile()">Contact Us</a>
-  <a href="#faq" onclick="closeMobile()">FAQ</a>
-  <a href="tel:9048489429" class="mobile-nav-cta">📞 Call 904-848-9429</a>
+  <a href="#about" onclick="closeM()">About</a>
+  <a href="#contact" onclick="closeM()">Contact Us</a>
+  <a href="#faq" onclick="closeM()">FAQ</a>
+  <a href="tel:9048489429" class="mob-cta">📞 Call 904-848-9429</a>
 </div>
 
-<!-- ── HERO / HOME ── -->
+
+<!-- ══ HOME ══ -->
 <section id="home">
-  <div class="hero-inner">
-    <div class="hero-content">
-      <div class="hero-badge">Mobile Service · Atlantic Beach, FL</div>
-      <h1>Local & Family-Owned <em>Car Key Specialists</em></h1>
-      <p class="hero-desc">Car Key Replacement Atlantic Beach is a locally owned and family-operated business providing reliable automotive key services to drivers in the community. Not a large chain — every service call is handled by a local technician.</p>
-      <div class="hero-btns">
-        <a href="tel:9048489429" class="btn-primary">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="white"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.5 12a19.79 19.79 0 01-3.07-8.67A2 2 0 013.44 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 8.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-          Call Now
-        </a>
-        <a href="#services" class="btn-secondary">Our Services</a>
-      </div>
-    </div>
-
-    <div class="hero-stats">
-      <div class="stat-item">
-        <span class="stat-num">60mi</span>
-        <span class="stat-label">Service Radius</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">30-60</span>
-        <span class="stat-label">Min Per Job</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">5★</span>
-        <span class="stat-label">Customer Rating</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">100%</span>
-        <span class="stat-label">Mobile Service</span>
-      </div>
-    </div>
-
-    <div class="hero-visual">
-      <div class="hero-card-main">
-        <div class="hero-float-badge">
-         
-          We Come<br>To You!
-        </div>
-        <div class="hero-card-top">
-          <div class="hero-card-icon">
-            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3" fill="none" stroke="#C9933A" stroke-width="2"/></svg>
-          </div>
-          <div>
-            <div class="hero-card-title">Mobile Car Key Service</div>
-            <div class="hero-card-sub">Atlantic Beach & 60mi radius</div>
-          </div>
-        </div>
-        <div class="hero-service-list">
-          <div class="service-chip">Lost car key situations</div>
-          <div class="service-chip">Smart key & push-to-start</div>
-          <div class="service-chip">Key fob replacement</div>
-          <div class="service-chip">Ignition repair & replacement</div>
-          <div class="service-chip">Spare key creation</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── ABOUT ── -->
-<section id="about">
-  <div class="section-inner">
-    <div class="about-grid">
+  <div class="wrap">
+    <div class="hero-grid">
       <div>
-        <span class="section-label">About Us</span>
-        <h2>A Different Kind of Key Service</h2>
-        <p style="color:var(--slate); line-height:1.7; margin-bottom:0.75rem;">We are not a large call center or a national chain. Every service call is handled by a local technician who understands the area, the roads, and the needs of customers in Atlantic Beach and nearby neighborhoods.</p>
-        <p style="color:var(--slate); line-height:1.7;">As a family-owned company, we take a different approach to service. We focus on clear communication, honest work, and making sure every job is completed correctly the first time. Our goal is not just to replace a key, but to provide a service that customers can trust and rely on when they need help the most.</p>
+        <div class="hero-badge">Mobile Service · Atlantic Beach, FL</div>
+        <h1>Local &amp; Family-Owned <em>Car Key Specialists</em> in Atlantic Beach</h1>
+        <p class="hero-p">Car Key Replacement Atlantic Beach is a locally owned and family-operated business focused on providing reliable automotive key services to drivers in the community. We are not a large call center or a national chain. Every service call is handled by a local technician who understands the area, the roads, and the needs of customers in Atlantic Beach and nearby neighborhoods.</p>
+        <div class="hero-btns">
+          <a href="tel:9048489429" class="btn-p"><svg viewBox="0 0 24 24" width="17" height="17" fill="white"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.5 12a19.79 19.79 0 01-3.07-8.67A2 2 0 013.44 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 8.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>Call Now: 904-848-9429</a>
+          <a href="#services" class="btn-s">Our Services</a>
+        </div>
+        <div class="hero-stats">
+          <div><div class="stat-n">60mi</div><div class="stat-l">Service Radius</div></div>
+          <div><div class="stat-n">30–60</div><div class="stat-l">Min Per Job</div></div>
+          <div><div class="stat-n">5 ★</div><div class="stat-l">Customer Rating</div></div>
+          <div><div class="stat-n">100%</div><div class="stat-l">Mobile Service</div></div>
+        </div>
+      </div>
+      <div class="hero-visual" style="display:flex;justify-content:center;align-items:center">
+        <div class="hero-card">
+          <div class="float-badge"><span>🚗</span>We Come<br>To You!</div>
+          <div class="hc-top">
+            <div class="hc-ico"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3" fill="none" stroke="#C9933A" stroke-width="2"/></svg></div>
+            <div><div class="hc-title">Mobile Car Key Service</div><div class="hc-sub">Atlantic Beach &amp; 60-mile radius</div></div>
+          </div>
+          <div class="hc-chips">
+            <div class="chip-check">Lost car key situations</div>
+            <div class="chip-check">Smart key &amp; push-to-start systems</div>
+            <div class="chip-check">Key fob replacement</div>
+            <div class="chip-check">Ignition key problems</div>
+            <div class="chip-check">Spare key creation</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ ABOUT ══ -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-body">
+        <span class="lbl">About Us</span>
+        <h2>🏡 A Local &amp; Family-Owned Business</h2>
+        <p>As a family-owned company, we take a different approach to service. We focus on clear communication, honest work, and making sure every job is completed correctly the first time. Our goal is not just to replace a key, but to provide a service that customers can trust and rely on when they need help the most.</p>
+        <p>Being local means we can respond faster and provide more personal service. We understand that when someone calls for car key replacement, it is usually an urgent situation — and we treat it that way.</p>
+        <p>We have built our service around real-world experience, working directly with customers in the field every day. This allows us to handle a wide range of automotive key problems while keeping the process simple and efficient.</p>
+        <p>Our focus is on helping drivers in Atlantic Beach with: lost car key situations, smart key and push-to-start systems, key fob replacement, ignition key problems, and spare key creation.</p>
+        <p>Because we are a local family business, our reputation matters. We aim to provide consistent, professional service that reflects the standards we would expect for our own family.</p>
+        <p>When you choose Car Key Replacement Atlantic Beach, you are working with a local team that values reliability, accountability, and straightforward service.</p>
+        <p>As a local family-owned business, we understand how important fast and dependable service is, especially when it comes to car key problems. Many of our customers are dealing with urgent situations such as being locked out, losing their only key, or having a key that suddenly stops working.</p>
+        <p>Because we operate locally, we are able to respond quickly and provide service without long waiting times. We are familiar with Atlantic Beach neighborhoods, residential areas, and common service locations, which allows us to reach customers efficiently and complete the job on-site.</p>
+        <p>Our approach is simple — provide straightforward service, explain the work clearly, and complete the job correctly. We focus on doing the work right rather than rushing through the process, because properly programmed keys and correctly repaired ignition systems are essential for long-term reliability.</p>
+        <p>Being a family-operated business also means we value long-term relationships with customers. Many of our calls come from repeat customers or referrals, which reflects the level of service we aim to provide every day.</p>
+        <p>We continue to serve Atlantic Beach drivers by focusing on professional automotive key solutions, reliable mobile service, and consistent results that customers can depend on.</p>
         <div class="about-features">
-          <div class="about-feature">
-            <div class="af-icon">
-              <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-            </div>
-            <div>
-              <div class="af-title">Family-Owned & Operated</div>
-              <div class="af-desc">Our reputation matters — we provide consistent, professional service that reflects the standards we'd expect for our own family.</div>
-            </div>
+          <div class="af reveal">
+            <div class="af-ico"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+            <div><div class="af-t">Family-Owned &amp; Operated</div><div class="af-d">Not a large call center or national chain. Every call is handled by a local technician who knows the area.</div></div>
           </div>
-          <div class="about-feature">
-            <div class="af-icon">
-              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            </div>
-            <div>
-              <div class="af-title">Fast Local Response</div>
-              <div class="af-desc">Because we operate locally, we can respond quickly and provide service without long waiting times.</div>
-            </div>
+          <div class="af reveal">
+            <div class="af-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div><div class="af-t">Fast Local Response</div><div class="af-d">We know Atlantic Beach — we respond faster, reach customers efficiently, and treat every call as urgent.</div></div>
           </div>
-          <div class="about-feature">
-            <div class="af-icon">
-              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
-            <div>
-              <div class="af-title">Reliable & Accountable</div>
-              <div class="af-desc">We focus on doing the work right, not rushing. Properly programmed keys and correctly repaired ignitions are essential for long-term reliability.</div>
-            </div>
+          <div class="af reveal">
+            <div class="af-ico"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div><div class="af-t">Reliable &amp; Accountable</div><div class="af-d">We do the work right the first time. Properly programmed keys and repaired ignitions are essential for long-term reliability.</div></div>
           </div>
         </div>
       </div>
-
-      <div class="about-visual">
-        <div class="about-card">
-          <div class="about-card-quote">
-            Being a family-operated business means we value long-term relationships. Many of our calls come from repeat customers or referrals.
-          </div>
-          <div class="about-card-items">
-            <div class="aci">
-              <div class="aci-num">363</div>
-              <div class="aci-text">Atlantic Blvd, Unit 4290A<br>Atlantic Beach, FL 32233</div>
+      <div>
+        <div class="about-card reveal">
+          <div class="ac-quote">Being a family-operated business means we value long-term relationships with customers. Many of our calls come from repeat customers or referrals, which reflects the level of service we aim to provide every day.</div>
+          <div class="ac-rows">
+            <div class="ac-row">
+              <div class="ac-txt">📍 363 Atlantic Blvd, Unit 4290A<br>Atlantic Beach, FL 32233</div>
             </div>
-            <div class="aci">
-              <div class="aci-num" style="font-size:1.1rem">📞</div>
-              <div class="aci-text"><strong style="color:white">904-848-9429</strong><br>Mobile service available now</div>
+            <div class="ac-row">
+              <div class="ac-txt">📞 <strong style="color:white">904-848-9429</strong><br><span style="opacity:.75">Call for immediate mobile service</span></div>
             </div>
-            <div class="aci">
-              <div class="aci-num" style="font-size:1.1rem">🚐</div>
-              <div class="aci-text">60-mile service radius<br>We come to your location</div>
+            <div class="ac-row">
+              <div class="ac-txt">🌐 <a href="https://carkeyreplacmentatlanticbeach.com" target="_blank" rel="noopener" style="color:var(--gold2)">carkeyreplacmentatlanticbeach.com</a></div>
+            </div>
+            <div class="ac-row">
+              <div class="ac-txt">🚐 Mobile service — 60-mile radius<br><span style="opacity:.75">We come directly to your location</span></div>
             </div>
           </div>
         </div>
@@ -1027,95 +399,61 @@
   </div>
 </section>
 
-<!-- ── SERVICES OVERVIEW ── -->
+
+<!-- ══ SERVICES OVERVIEW ══ -->
 <section id="services">
-  <div class="section-inner">
-    <span class="section-label">Our Services</span>
+  <div class="wrap">
+    <span class="lbl">Our Services</span>
     <h2>Everything Your Car Key Needs</h2>
-    <p class="section-desc">From emergency lockouts to spare key creation, our mobile technicians handle it all at your location — no towing, no dealership delays.</p>
-
-    <div class="services-grid">
-      <!-- Ignition -->
-      <div class="service-card">
-        <div class="service-card-accent"></div>
-        <div class="sc-icon">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
-        </div>
-        <div class="sc-title">Ignition Repair & Replacement</div>
-        <div class="sc-desc">If your key won't turn, gets stuck, or your vehicle refuses to start, the problem may be the ignition system itself.</div>
-        <ul class="sc-list">
-          <li>Key not turning in ignition</li>
-          <li>Key stuck or broken in ignition</li>
-          <li>Ignition cylinder replacement</li>
-          <li>Broken key extraction</li>
-        </ul>
-        <a href="#ignition" style="display:inline-block;margin-top:1.25rem;color:var(--gold);font-size:0.85rem;font-weight:600;text-decoration:none;">Learn more →</a>
+    <p class="sub">From emergency lockouts to spare key creation, our mobile technicians handle it all on-site — no towing, no dealership delays.</p>
+    <div class="svc-grid">
+      <div class="sc reveal">
+        <div class="sc-bar"></div>
+        <div class="sc-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
+        <div class="sc-t">Ignition Repair &amp; Replacement</div>
+        <div class="sc-d">Key won't turn, gets stuck, or vehicle won't start? The ignition itself may be the problem. We diagnose and fix ignition issues on-site.</div>
+        <ul class="sc-ul"><li>Key not turning in ignition</li><li>Key stuck or broken in ignition</li><li>Ignition cylinder worn or damaged</li><li>Broken key extraction</li><li>Ignition repair &amp; full replacement</li></ul>
+        <a href="#ignition" class="sc-link">View full details →</a>
       </div>
-
-      <!-- Key Fob -->
-      <div class="service-card">
-        <div class="service-card-accent"></div>
-        <div class="sc-icon">
-          <svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V5a4 4 0 018 0v2"/><line x1="12" y1="12" x2="12" y2="16"/></svg>
-        </div>
-        <div class="sc-title">Key Fob & Push-to-Start</div>
-        <div class="sc-desc">Modern key fobs and smart keys require precise programming. We handle replacement and programming on-site.</div>
-        <ul class="sc-list">
-          <li>Key fob replacement & programming</li>
-          <li>Smart key & proximity key setup</li>
-          <li>Key not detected repair</li>
-          <li>Lost key fob replacement</li>
-        </ul>
-        <a href="#keyfob" style="display:inline-block;margin-top:1.25rem;color:var(--gold);font-size:0.85rem;font-weight:600;text-decoration:none;">Learn more →</a>
+      <div class="sc reveal">
+        <div class="sc-bar"></div>
+        <div class="sc-ico"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V5a4 4 0 018 0v2"/><line x1="12" y1="12" x2="12" y2="16"/></svg></div>
+        <div class="sc-t">Key Fob &amp; Push-to-Start</div>
+        <div class="sc-d">Modern key fobs and smart keys require precise programming. We handle replacement and on-site programming to restore full vehicle access.</div>
+        <ul class="sc-ul"><li>Key fob replacement &amp; programming</li><li>Smart key &amp; proximity key setup</li><li>Key not detected repair</li><li>Lost key fob replacement</li><li>Remote re-synchronization</li></ul>
+        <a href="#keyfob" class="sc-link">View full details →</a>
       </div>
-
-      <!-- Mobile -->
-      <div class="service-card">
-        <div class="service-card-accent"></div>
-        <div class="sc-icon">
-          <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-        </div>
-        <div class="sc-title">Mobile Car Key Replacement</div>
-        <div class="sc-desc">We come to your location — home, parking lot, office, roadside, or beach access. No towing needed.</div>
-        <ul class="sc-list">
-          <li>On-site key cutting & programming</li>
-          <li>Lost key replacement without original</li>
-          <li>Fast response in Atlantic Beach</li>
-          <li>No towing required</li>
-        </ul>
-        <a href="#mobile" style="display:inline-block;margin-top:1.25rem;color:var(--gold);font-size:0.85rem;font-weight:600;text-decoration:none;">Learn more →</a>
+      <div class="sc reveal">
+        <div class="sc-bar"></div>
+        <div class="sc-ico"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+        <div class="sc-t">Mobile Car Key Replacement</div>
+        <div class="sc-d">We come to you — home, parking lot, office, roadside, or beach access. Full key cutting &amp; programming done on-site in one visit. No towing required.</div>
+        <ul class="sc-ul"><li>On-site key cutting &amp; programming</li><li>Lost key replacement without original</li><li>Fast response in Atlantic Beach</li><li>No towing — no dealership delays</li><li>Modern vehicle key programming</li></ul>
+        <a href="#mobile" class="sc-link">View full details →</a>
       </div>
-
-      <!-- Key Cutting -->
-      <div class="service-card">
-        <div class="service-card-accent"></div>
-        <div class="sc-icon">
-          <svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
-        </div>
-        <div class="sc-title">Key Cutting & Programming</div>
-        <div class="sc-desc">Bought a key online? We can cut and program it. We also help with spare keys and transponder setup.</div>
-        <ul class="sc-list">
-          <li>Aftermarket key fob programming</li>
-          <li>Standard & laser cut keys</li>
-          <li>Transponder key programming</li>
-          <li>Spare key creation</li>
-        </ul>
-        <a href="#cutting" style="display:inline-block;margin-top:1.25rem;color:var(--gold);font-size:0.85rem;font-weight:600;text-decoration:none;">Learn more →</a>
+      <div class="sc reveal">
+        <div class="sc-bar"></div>
+        <div class="sc-ico"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg></div>
+        <div class="sc-t">Key Cutting &amp; Programming</div>
+        <div class="sc-d">Bought a key online? We can cut and program it. We also create spare keys and handle transponder key programming for all key types.</div>
+        <ul class="sc-ul"><li>Aftermarket key fob programming</li><li>Standard &amp; laser cut (high-security) keys</li><li>Transponder key programming</li><li>Spare key creation</li><li>Key duplication</li></ul>
+        <a href="#cutting" class="sc-link">View full details →</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── IGNITION DETAIL ── -->
-<section id="ignition" style="background:var(--warm-white); padding-top:4rem; padding-bottom:4rem;">
-  <div class="section-inner">
-    <span class="section-label">Service Detail</span>
-    <h2>🔧 Ignition Repair & Ignition Replacement</h2>
-    <p style="color:var(--slate);line-height:1.7;max-width:700px;margin-bottom:2rem;">Ignition systems experience wear from daily use. If your car key will not turn, gets stuck in the ignition, or the vehicle refuses to start, the problem may not be the key — it may be the ignition system itself. Our mobile technicians come directly to your location with the tools needed to diagnose and fix ignition problems on-site.</p>
 
-    <div class="detail-grid">
-      <div class="detail-box">
+<!-- ══ IGNITION DETAIL ══ -->
+<section id="ignition" class="det-sec reg">
+  <div class="wrap">
+    <span class="lbl">Service Detail</span>
+    <h2>🔧 Ignition Repair &amp; Ignition Replacement in Atlantic Beach, FL</h2>
+    <p class="det-intro">If your car key will not turn, gets stuck in the ignition, or the vehicle refuses to start, the problem may not be the key — it may be the ignition system itself. Ignition issues can happen gradually over time or suddenly without warning, leaving you unable to start your vehicle when you need it most. Car Key Replacement Atlantic Beach provides professional ignition repair and ignition replacement services designed to restore proper function to your vehicle quickly and safely. Our mobile technicians come directly to your location with the tools needed to diagnose and fix ignition problems on-site.</p>
+    <div class="det-grid">
+      <div class="dbox reveal">
         <h4>⚙️ Common Ignition Problems</h4>
+        <p>Ignition systems experience wear from daily use. Over time, internal components inside the ignition cylinder can become worn, misaligned, or damaged. Ignoring these issues can lead to complete ignition failure, which may leave the vehicle unusable.</p>
         <ul>
           <li>Key not turning in ignition</li>
           <li>Key stuck in ignition</li>
@@ -1127,18 +465,21 @@
           <li>Ignition switch not responding</li>
         </ul>
       </div>
-      <div class="detail-box">
-        <h4>🔍 Ignition Diagnosis</h4>
+      <div class="dbox reveal">
+        <h4>🔍 Ignition Diagnosis — Finding the Real Problem</h4>
+        <p>Not all ignition problems require full replacement. In many cases, the issue can be repaired if identified early. Our technicians begin with a full inspection of:</p>
         <ul>
-          <li>Ignition cylinder condition check</li>
-          <li>Key wear and damage assessment</li>
-          <li>Internal lock component inspection</li>
-          <li>Steering lock issue detection</li>
+          <li>Ignition cylinder condition</li>
+          <li>Key wear and damage</li>
+          <li>Internal lock components</li>
+          <li>Steering lock issues</li>
           <li>Electrical ignition switch (if applicable)</li>
         </ul>
+        <p>Accurate diagnosis helps determine whether ignition repair is possible or if replacement is the better option.</p>
       </div>
-      <div class="detail-box">
-        <h4>🔧 Ignition Repair May Include</h4>
+      <div class="dbox reveal">
+        <h4>🔧 Ignition Repair Service</h4>
+        <p>When possible, ignition repair is the preferred solution. Repairing the ignition can restore smooth operation without replacing the entire system. Repairing the ignition early can prevent more serious problems and reduce overall cost. Ignition repair may include:</p>
         <ul>
           <li>Cleaning and adjusting internal components</li>
           <li>Repairing worn ignition pins</li>
@@ -1147,53 +488,72 @@
           <li>Restoring smooth key rotation</li>
         </ul>
       </div>
-      <div class="detail-box">
-        <h4>🔄 Ignition Replacement Includes</h4>
+      <div class="dbox reveal">
+        <h4>🔄 Ignition Replacement Service</h4>
+        <p>If the ignition cylinder is severely worn or damaged, replacement may be required. A damaged ignition can prevent the vehicle from starting or cause the key to stop working completely. We provide ignition replacement for many vehicle types and ensure the new ignition works correctly with your key system. Ignition replacement includes:</p>
         <ul>
           <li>Removing the damaged ignition cylinder</li>
           <li>Installing a new ignition unit</li>
-          <li>Matching new ignition to your key</li>
-          <li>Programming (if required)</li>
+          <li>Matching the new ignition to your key (when possible)</li>
+          <li>Programming (if required for modern vehicles)</li>
           <li>Testing full ignition function</li>
         </ul>
+        <p>Our goal is to restore reliable starting and proper key function.</p>
+      </div>
+      <div class="dbox reveal">
+        <h4>🔑 Broken Key Extraction from Ignition</h4>
+        <p>A broken key inside the ignition is a common issue that requires careful handling. Attempting to remove it without proper tools can damage the ignition further. We safely remove broken keys and inspect the ignition to ensure no internal damage has occurred.</p>
+      </div>
+      <div class="dbox reveal">
+        <h4>🚗 Mobile Ignition Repair — We Come to You</h4>
+        <p>Our ignition service is fully mobile, allowing us to perform repairs and replacements wherever your vehicle is located in Atlantic Beach. Ignition problems can leave you stranded without warning. Our goal is to provide fast and reliable service so you can get back on the road without unnecessary delays. Because we specialize in automotive key and ignition systems, we are able to complete most ignition jobs efficiently during a single visit.</p>
+      </div>
+      <div class="dbox full-col reveal">
+        <h4>🧠 Ignition Problems vs Key Problems</h4>
+        <p>Many drivers are unsure whether the issue is the key or the ignition. We can identify the exact cause and recommend the correct solution.</p>
+        <div class="two-col-in">
+          <div>
+            <p style="font-size:.82rem;font-weight:700;color:var(--navy);margin-bottom:.5rem">Signs it may be an ignition problem:</p>
+            <ul>
+              <li>Key works in doors but not ignition</li>
+              <li>Key feels stuck or hard to turn</li>
+              <li>Ignition does not respond</li>
+              <li>Steering wheel lock interfering</li>
+            </ul>
+          </div>
+          <div>
+            <p style="font-size:.82rem;font-weight:700;color:var(--navy);margin-bottom:.5rem">Signs it may be a key issue:</p>
+            <ul>
+              <li>Key worn or bent</li>
+              <li>Remote not working</li>
+              <li>Vehicle not detecting key</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
-
-    <div class="detail-box" style="margin-top:1.5rem;">
-      <h4>🧠 Ignition Problems vs Key Problems</h4>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:0.5rem;">
-        <div>
-          <p style="font-size:0.82rem;font-weight:600;color:var(--navy);margin-bottom:0.5rem;">Signs it may be an ignition problem:</p>
-          <ul>
-            <li>Key works in doors but not ignition</li>
-            <li>Key feels stuck or hard to turn</li>
-            <li>Ignition does not respond</li>
-            <li>Steering wheel lock interfering</li>
-          </ul>
-        </div>
-        <div>
-          <p style="font-size:0.82rem;font-weight:600;color:var(--navy);margin-bottom:0.5rem;">Signs it may be a key issue:</p>
-          <ul>
-            <li>Key worn or bent</li>
-            <li>Remote not working</li>
-            <li>Vehicle not detecting key</li>
-          </ul>
-        </div>
-      </div>
+    <div class="hlight reveal">
+      <h4>⭐ Professional Ignition Repair You Can Trust</h4>
+      <ul>
+        <li>Ignition systems are a critical part of your vehicle — incorrect repairs can cause ongoing issues or prevent the vehicle from starting</li>
+        <li>Car Key Replacement Atlantic Beach provides professional ignition repair and replacement using the correct tools and techniques to ensure long-term reliability</li>
+        <li>Whether your key is stuck, your ignition is worn out, or your vehicle will not start, we provide solutions designed to restore proper function quickly and safely</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- ── KEY FOB DETAIL ── -->
-<section id="keyfob" style="background:var(--cream); padding-top:4rem; padding-bottom:4rem;">
-  <div class="section-inner">
-    <span class="section-label">Service Detail</span>
-    <h2>📡 Key Fob & Push-to-Start Key Replacement</h2>
-    <p style="color:var(--slate);line-height:1.7;max-width:700px;margin-bottom:2rem;">Modern vehicles use advanced key systems that replace traditional metal keys. Key fobs and push-to-start smart keys allow drivers to unlock and start their vehicles electronically. When a key fob stops working, is lost, or the vehicle no longer detects the key, it can prevent access to the car completely.</p>
 
-    <div class="detail-grid">
-      <div class="detail-box">
+<!-- ══ KEY FOB DETAIL ══ -->
+<section id="keyfob" class="det-sec alt">
+  <div class="wrap">
+    <span class="lbl">Service Detail</span>
+    <h2>📡 Key Fob &amp; Push-to-Start Key Replacement in Atlantic Beach, FL</h2>
+    <p class="det-intro">Modern vehicles use advanced key systems that replace traditional metal keys. Key fobs and push-to-start smart keys allow drivers to unlock and start their vehicles electronically without inserting a key into the ignition. When a key fob stops working, is lost, or the vehicle no longer detects the key, it can prevent access to the car completely. Car Key Replacement Atlantic Beach provides professional key fob replacement and push-to-start key programming designed to restore full functionality quickly and safely. Our mobile technicians come directly to your location in Atlantic Beach with professional programming tools, allowing us to replace and program keys on-site.</p>
+    <div class="det-grid">
+      <div class="dbox reveal">
         <h4>📡 Key Fob Replacement Service</h4>
+        <p>Key fobs control important functions such as locking, unlocking, and remote access. When a key fob fails, the issue may be related to the battery, internal damage, or programming. We provide:</p>
         <ul>
           <li>Key fob replacement</li>
           <li>Remote programming</li>
@@ -1201,9 +561,11 @@
           <li>Signal testing</li>
           <li>Re-synchronization</li>
         </ul>
+        <p>Our goal is to ensure the remote communicates properly with your vehicle and works reliably.</p>
       </div>
-      <div class="detail-box">
-        <h4>🚗 Push-to-Start & Smart Key</h4>
+      <div class="dbox reveal">
+        <h4>🚗 Push-to-Start &amp; Smart Key Replacement</h4>
+        <p>Push-to-start vehicles use smart keys that communicate wirelessly with the car. If the key is missing or not detected, the vehicle will not start. These systems require precise programming to function correctly. We provide:</p>
         <ul>
           <li>Smart key replacement</li>
           <li>Proximity key programming</li>
@@ -1212,48 +574,65 @@
           <li>Lost smart key replacement</li>
         </ul>
       </div>
-      <div class="detail-box">
-        <h4>⚠️ Key Not Detected – Possible Causes</h4>
+      <div class="dbox reveal">
+        <h4>⚠️ Key Not Detected Issues</h4>
+        <p>A common problem with modern vehicles is when the system does not recognize the key. This may be caused by:</p>
         <ul>
           <li>Weak or dead battery</li>
           <li>Damaged key fob</li>
           <li>Programming errors</li>
           <li>Signal interference</li>
         </ul>
+        <p>We diagnose the issue and determine whether repair or replacement is needed.</p>
       </div>
-      <div class="detail-box">
+      <div class="dbox reveal">
         <h4>🔄 Lost Key Fob Replacement</h4>
+        <p>If you lost your key fob, we can create and program a new one directly at your location. Our service includes:</p>
         <ul>
           <li>New key creation without original</li>
           <li>Programming to vehicle system</li>
           <li>Removing lost keys from memory</li>
           <li>Full functionality testing</li>
         </ul>
+        <p>This ensures your vehicle stays secure and fully operational.</p>
       </div>
+    </div>
+    <div class="hlight reveal">
+      <h4>⭐ Professional Key Fob &amp; Smart Key Service</h4>
+      <ul>
+        <li>Replacing modern car keys requires the right tools and experience — proper programming ensures your vehicle recognizes the key and operates correctly</li>
+        <li>Car Key Replacement Atlantic Beach provides reliable key fob and push-to-start key replacement designed to restore access quickly and safely</li>
+        <li>Whether your key is lost, damaged, or not working, we provide solutions that get you back on the road without unnecessary delays</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- ── MOBILE SERVICE DETAIL ── -->
-<section id="mobile" style="background:var(--warm-white); padding-top:4rem; padding-bottom:4rem;">
-  <div class="section-inner">
-    <span class="section-label">Service Detail</span>
-    <h2>🚐 Mobile Car Key Replacement in Atlantic Beach</h2>
-    <p style="color:var(--slate);line-height:1.7;max-width:700px;margin-bottom:2rem;">When you lose your car key or your key suddenly stops working, getting your vehicle to a dealership is not always possible. Our fully mobile automotive key service allows us to come directly to your location and complete the work on-site.</p>
 
-    <div class="detail-grid">
-      <div class="detail-box">
-        <h4>📍 We Provide Mobile Service At</h4>
+<!-- ══ MOBILE DETAIL ══ -->
+<section id="mobile" class="det-sec reg">
+  <div class="wrap">
+    <span class="lbl">Service Detail</span>
+    <h2>🚐 Mobile Car Key Replacement in Atlantic Beach, FL</h2>
+    <p class="det-intro">When you lose your car key or your key suddenly stops working, getting your vehicle to a dealership is not always possible. That is why mobile car key replacement has become the most convenient solution for drivers in Atlantic Beach. Car Key Replacement Atlantic Beach provides fully mobile automotive key service, allowing us to come directly to your location and complete the work on-site. Whether your vehicle is parked at home, at work, or near the beach, our technicians arrive with professional key cutting and programming equipment ready to solve the problem.</p>
+    <div class="det-grid">
+      <div class="dbox reveal">
+        <h4>📍 We Come to Your Location</h4>
+        <p>Our mobile service is designed to eliminate the need for towing or waiting at a shop. Instead of bringing your car to us, we bring the service to you. We provide mobile service at:</p>
         <ul>
-          <li>Homes &amp; apartment complexes</li>
-          <li>Parking lots &amp; shopping centers</li>
+          <li>Homes</li>
+          <li>Apartment complexes</li>
+          <li>Parking lots</li>
           <li>Office locations</li>
+          <li>Shopping centers</li>
           <li>Roadside situations</li>
           <li>Beach access areas</li>
         </ul>
+        <p>This makes the process faster, easier, and more convenient.</p>
       </div>
-      <div class="detail-box">
-        <h4>🔑 On-Site Services Available</h4>
+      <div class="dbox reveal">
+        <h4>🔑 On-Site Car Key Replacement</h4>
+        <p>Modern vehicles require both key cutting and electronic programming. Our mobile units are equipped with advanced tools that allow us to complete both steps during the same visit. We can:</p>
         <ul>
           <li>Replace lost car keys</li>
           <li>Cut new keys on-site</li>
@@ -1261,40 +640,76 @@
           <li>Create spare keys</li>
           <li>Replace key fobs and smart keys</li>
         </ul>
+        <p>Most services are completed without needing a second visit.</p>
       </div>
-      <div class="detail-box">
+      <div class="dbox reveal">
+        <h4>⚡ Fast Response Mobile Locksmith Service</h4>
+        <p>Car key problems can happen without warning. Being locked out or losing your only key can disrupt your entire day. Our mobile car key replacement service is focused on fast response and efficient work. Because we operate locally in Atlantic Beach, we are able to reach customers quickly and begin working immediately. Our goal is to restore access to your vehicle as soon as possible.</p>
+      </div>
+      <div class="dbox reveal">
         <h4>🚫 No Towing — No Dealership Delays</h4>
+        <p>One of the biggest advantages of mobile car key service is avoiding the complications of dealership service. With mobile service:</p>
         <ul>
-          <li>No towing required</li>
+          <li>No towing is required</li>
           <li>No waiting for appointments</li>
-          <li>No leaving vehicle at a shop</li>
+          <li>No leaving your vehicle at a shop</li>
           <li>Faster turnaround time</li>
-          <li>Work done where your vehicle is</li>
         </ul>
+        <p>We complete the work where your vehicle is located.</p>
       </div>
-      <div class="detail-box">
-        <h4>🔄 Lost Car Key? We Can Help</h4>
+      <div class="dbox reveal">
+        <h4>🧠 Modern Vehicle Key Programming</h4>
+        <p>Today's vehicles use advanced security systems that require proper programming to function correctly. Our technicians use professional equipment to:</p>
         <ul>
-          <li>Generate a new key on-site</li>
+          <li>Program transponder keys</li>
+          <li>Set up smart keys and push-to-start systems</li>
+          <li>Sync key fobs with your vehicle</li>
+          <li>Reset key systems when needed</li>
+        </ul>
+        <p>Correct programming ensures the vehicle recognizes the new key and operates safely.</p>
+      </div>
+      <div class="dbox reveal">
+        <h4>🔄 Lost Car Key? We Can Help On-Site</h4>
+        <p>If you lost your only key, our mobile service allows us to create a new key without the original. We can:</p>
+        <ul>
+          <li>Generate a new key</li>
           <li>Program it to your vehicle</li>
           <li>Remove lost keys from memory</li>
           <li>Test everything before completion</li>
         </ul>
+        <p>This process restores access while keeping your vehicle secure.</p>
       </div>
+      <div class="dbox full-col reveal">
+        <h4>⭐ Why Choose Mobile Car Key Replacement</h4>
+        <p>Drivers in Atlantic Beach choose mobile service because it is faster, more convenient, and designed for real-life situations. Benefits include:</p>
+        <div class="two-col-in">
+          <ul><li>Service at your location</li><li>Faster response times</li><li>No towing required</li></ul>
+          <ul><li>One-visit completion</li><li>Professional automotive tools</li><li>Reliable results</li></ul>
+        </div>
+      </div>
+    </div>
+    <div class="hlight reveal">
+      <h4>🚀 Reliable Mobile Car Key Service in Atlantic Beach</h4>
+      <ul>
+        <li>Mobile car key replacement is the most efficient way to handle modern automotive key problems</li>
+        <li>By bringing the service directly to your location, we eliminate delays and make the process simple</li>
+        <li>Whether you lost your key, need a spare, or your key stopped working, we are ready to provide on-site service that gets you back on the road</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- ── KEY CUTTING DETAIL ── -->
-<section id="cutting" style="background:var(--cream); padding-top:4rem; padding-bottom:4rem;">
-  <div class="section-inner">
-    <span class="section-label">Service Detail</span>
-    <h2>✂️ Car Key Cutting & Key Programming</h2>
-    <p style="color:var(--slate);line-height:1.7;max-width:700px;margin-bottom:2rem;">Many drivers purchase car keys or key fobs online to save money. However, buying a key is only part of the process — in most cases, the key still needs to be cut and programmed correctly in order to work with your vehicle. We provide professional key cutting and programming for customers who already have a key and need it set up properly.</p>
 
-    <div class="detail-grid">
-      <div class="detail-box">
-        <h4>🛠️ Bought a Key Online? We Program It</h4>
+<!-- ══ KEY CUTTING DETAIL ══ -->
+<section id="cutting" class="det-sec alt">
+  <div class="wrap">
+    <span class="lbl">Service Detail</span>
+    <h2>✂️ Car Key Cutting &amp; Key Programming in Atlantic Beach, FL</h2>
+    <p class="det-intro">Many drivers today choose to purchase car keys or key fobs online as a way to save money. However, buying a key is only part of the process. In most cases, the key still needs to be cut and programmed correctly in order to work with your vehicle. Car Key Replacement Atlantic Beach provides professional key cutting and key programming services for customers who already have a key and need it set up properly. Our mobile service allows us to come directly to your location and complete the work on-site.</p>
+    <div class="det-grid">
+      <div class="dbox reveal">
+        <h4>🛠️ Bought a Key Online? We Can Program It</h4>
+        <p>If you purchased a key fob, smart key, or transponder key online, it will not work until it is programmed to your vehicle's system. We help customers with:</p>
         <ul>
           <li>Programming aftermarket key fobs</li>
           <li>Smart key setup</li>
@@ -1302,27 +717,53 @@
           <li>Syncing remote functions</li>
           <li>Adding additional keys</li>
         </ul>
+        <p>Our equipment allows us to program many types of keys so they communicate correctly with your vehicle.</p>
       </div>
-      <div class="detail-box">
-        <h4>✂️ Key Cutting Service</h4>
+      <div class="dbox reveal">
+        <h4>✂️ Car Key Cutting Service</h4>
+        <p>In addition to programming, many keys must also be physically cut to match your vehicle's ignition and door locks. Accurate cutting is important to ensure the key turns smoothly and does not damage the ignition. We provide:</p>
         <ul>
           <li>Standard key cutting</li>
           <li>Laser cut (high-security) keys</li>
           <li>Key duplication</li>
-          <li>Cutting keys without the original</li>
+          <li>Cutting keys without the original (in many cases)</li>
         </ul>
       </div>
-      <div class="detail-box">
+      <div class="dbox reveal">
         <h4>⚠️ Not All Online Keys Will Work</h4>
+        <p>One important thing to understand is that not every key purchased online is compatible with your vehicle. Some keys may look identical but use different chips or frequencies. Common issues include:</p>
         <ul>
           <li>Incorrect key type</li>
           <li>Wrong chip inside the key</li>
           <li>Incompatible remote frequency</li>
           <li>Used or previously programmed keys</li>
         </ul>
+        <p>Before programming, we can often check if the key is compatible with your vehicle.</p>
       </div>
-      <div class="detail-box">
+      <div class="dbox reveal">
+        <h4>🔄 Key Programming for Spare Keys</h4>
+        <p>If you already have one working key, adding a spare key is usually faster and more cost-effective. We can:</p>
+        <ul>
+          <li>Program additional keys</li>
+          <li>Duplicate existing keys</li>
+          <li>Add smart keys to the system</li>
+          <li>Sync remotes</li>
+        </ul>
+        <p>Having a spare key helps prevent future lockouts and reduces replacement costs.</p>
+      </div>
+      <div class="dbox reveal">
         <h4>🧠 Why Proper Programming Matters</h4>
+        <p>Modern vehicles use immobilizer systems that require the key to be programmed correctly. If the programming is not done properly:</p>
+        <ul>
+          <li>The vehicle may not start</li>
+          <li>The key may not be detected</li>
+          <li>Remote functions may fail</li>
+        </ul>
+        <p>Using professional equipment ensures the key is programmed safely and works as intended.</p>
+      </div>
+      <div class="dbox reveal">
+        <h4>🚫 Avoid Trial-and-Error Programming</h4>
+        <p>Many online guides suggest DIY programming, but this often does not work with newer vehicles. Incorrect attempts can waste time or cause system errors. Professional programming ensures:</p>
         <ul>
           <li>Correct setup the first time</li>
           <li>Compatibility with your vehicle</li>
@@ -1331,248 +772,142 @@
         </ul>
       </div>
     </div>
+    <div class="hlight reveal">
+      <h4>⭐ Key Cutting &amp; Programming Service You Can Trust</h4>
+      <ul>
+        <li>Car Key Replacement Atlantic Beach provides professional key cutting and programming services for customers who already have keys and need them set up correctly</li>
+        <li>Whether you bought a key online, need a spare, or want to program a new remote, we provide mobile service</li>
+        <li>Designed to make the process simple, fast, and reliable — completed in one on-site visit</li>
+      </ul>
+    </div>
   </div>
 </section>
 
-<!-- ── REVIEWS ── -->
+
+<!-- ══ REVIEWS ══ -->
 <section id="reviews">
-  <div class="section-inner">
-    <span class="section-label">Customer Reviews</span>
+  <div class="wrap">
+    <span class="lbl">Customer Reviews</span>
     <h2>What Our Customers Say</h2>
-    <p class="section-desc" style="color:rgba(255,255,255,0.6);">Real experiences from drivers in Atlantic Beach and surrounding areas.</p>
-
-    <div class="reviews-grid">
-      <div class="review-card">
-        <div class="review-stars">
-          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-        </div>
-        <div class="review-text">I lost my only car key near Atlantic Beach and thought I would have to tow my car to the dealership. These guys came out fast, made me a new key on-site, and programmed it perfectly. Super smooth process and very professional service.</div>
-        <div class="reviewer-info">
-          <div class="reviewer-avatar">J</div>
-          <div>
-            <div class="reviewer-name">Jason Miller</div>
-            <div class="reviewer-sub">Atlantic Beach, FL</div>
-          </div>
-        </div>
+    <p class="sub">Real experiences from drivers in Atlantic Beach and surrounding areas.</p>
+    <div class="rev-grid">
+      <div class="rc reveal">
+        <div class="rc-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <div class="rc-txt">I lost my only car key near Atlantic Beach and thought I would have to tow my car to the dealership. These guys came out fast, made me a new key on-site, and programmed it perfectly. Super smooth process and very professional service.</div>
+        <div class="rc-info"><div class="rc-av">J</div><div><div class="rc-name">Jason Miller</div><div class="rc-loc">Atlantic Beach, FL</div></div></div>
       </div>
-
-      <div class="review-card">
-        <div class="review-stars">
-          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-        </div>
-        <div class="review-text">I bought a key fob online and didn't know who could program it. They showed up, cut the key, programmed it, and made sure everything worked before leaving. Honest and straightforward service. Definitely recommend.</div>
-        <div class="reviewer-info">
-          <div class="reviewer-avatar">D</div>
-          <div>
-            <div class="reviewer-name">Daniel Rodriguez</div>
-            <div class="reviewer-sub">Atlantic Beach, FL</div>
-          </div>
-        </div>
+      <div class="rc reveal">
+        <div class="rc-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <div class="rc-txt">I bought a key fob online and didn't know who could program it. They showed up, cut the key, programmed it, and made sure everything worked before leaving. Honest and straightforward service. Definitely recommend.</div>
+        <div class="rc-info"><div class="rc-av">D</div><div><div class="rc-name">Daniel Rodriguez</div><div class="rc-loc">Atlantic Beach, FL</div></div></div>
       </div>
-
-      <div class="review-card">
-        <div class="review-stars">
-          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-        </div>
-        <div class="review-text">My push-to-start key stopped working out of nowhere. They diagnosed the issue quickly and programmed a new smart key right at my house. Way easier than dealing with the dealership. Great experience overall.</div>
-        <div class="reviewer-info">
-          <div class="reviewer-avatar">M</div>
-          <div>
-            <div class="reviewer-name">Michael Thompson</div>
-            <div class="reviewer-sub">Atlantic Beach, FL</div>
-          </div>
-        </div>
+      <div class="rc reveal">
+        <div class="rc-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <div class="rc-txt">My push-to-start key stopped working out of nowhere. They diagnosed the issue quickly and programmed a new smart key right at my house. Way easier than dealing with the dealership. Great experience overall.</div>
+        <div class="rc-info"><div class="rc-av">M</div><div><div class="rc-name">Michael Thompson</div><div class="rc-loc">Atlantic Beach, FL</div></div></div>
       </div>
-
-      <div class="review-card">
-        <div class="review-stars">
-          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-        </div>
-        <div class="review-text">Got locked out at the beach parking lot and needed help fast. They arrived quicker than expected and had my car unlocked in minutes. Also made me a spare key on the spot. Very professional and efficient.</div>
-        <div class="reviewer-info">
-          <div class="reviewer-avatar">C</div>
-          <div>
-            <div class="reviewer-name">Chris Bennett</div>
-            <div class="reviewer-sub">Atlantic Beach, FL</div>
-          </div>
-        </div>
+      <div class="rc reveal">
+        <div class="rc-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <div class="rc-txt">Got locked out at the beach parking lot and needed help fast. They arrived quicker than expected and had my car unlocked in minutes. Also made me a spare key on the spot. Very professional and efficient.</div>
+        <div class="rc-info"><div class="rc-av">C</div><div><div class="rc-name">Chris Bennett</div><div class="rc-loc">Atlantic Beach, FL</div></div></div>
       </div>
-
-      <div class="review-card">
-        <div class="review-stars">
-          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-        </div>
-        <div class="review-text">Needed an extra key for my truck and didn't want to pay dealership prices. They came to my location, cut and programmed a spare key in one visit. Everything works perfectly. Great mobile service in Atlantic Beach.</div>
-        <div class="reviewer-info">
-          <div class="reviewer-avatar">A</div>
-          <div>
-            <div class="reviewer-name">Anthony Garcia</div>
-            <div class="reviewer-sub">Atlantic Beach, FL</div>
-          </div>
-        </div>
+      <div class="rc reveal">
+        <div class="rc-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <div class="rc-txt">Needed an extra key for my truck and didn't want to pay dealership prices. They came to my location, cut and programmed a spare key in one visit. Everything works perfectly. Great mobile service in Atlantic Beach.</div>
+        <div class="rc-info"><div class="rc-av">A</div><div><div class="rc-name">Anthony Garcia</div><div class="rc-loc">Atlantic Beach, FL</div></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── FAQ ── -->
+
+<!-- ══ FAQ ══ -->
 <section id="faq">
-  <div class="section-inner">
-    <span class="section-label">FAQ</span>
+  <div class="wrap">
+    <span class="lbl">FAQ</span>
     <h2>Frequently Asked Questions</h2>
-    <p class="section-desc">Common questions about our car key replacement services in Atlantic Beach.</p>
-
+    <p class="sub">Common questions about our car key replacement services in Atlantic Beach, FL.</p>
     <div class="faq-grid">
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          Can you replace my car key if I lost the only one?
-          <span class="faq-q-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">Yes. In most cases we can create and program a new key even if all keys are lost. We come to your location and complete the process on-site without towing the vehicle.</div></div>
+      <div class="fi reveal">
+        <button class="fq" onclick="toggleFaq(this)">Can you replace my car key if I lost the only one?<span class="fq-ico"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="fa"><div class="fa-in">Yes. In most cases we can create and program a new key even if all keys are lost. We come to your location and complete the process on-site without towing the vehicle.</div></div>
       </div>
-
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          Do I need to tow my car for key replacement?
-          <span class="faq-q-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">No. Our service is fully mobile, which means we come to your vehicle and perform key cutting and programming at your location.</div></div>
+      <div class="fi reveal">
+        <button class="fq" onclick="toggleFaq(this)">Do I need to tow my car for key replacement?<span class="fq-ico"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="fa"><div class="fa-in">No. Our service is fully mobile, which means we come to your vehicle and perform key cutting and programming at your location.</div></div>
       </div>
-
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          How long does car key replacement take?
-          <span class="faq-q-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">Most jobs take between 30–60 minutes depending on the vehicle type and key system.</div></div>
+      <div class="fi reveal">
+        <button class="fq" onclick="toggleFaq(this)">How long does car key replacement take?<span class="fq-ico"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="fa"><div class="fa-in">Most jobs take between 30–60 minutes depending on the vehicle type and key system.</div></div>
       </div>
-
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          Can you program smart keys and push-to-start keys?
-          <span class="faq-q-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">Yes. We program smart keys, proximity keys, push-to-start systems, and key fobs for many modern vehicles.</div></div>
+      <div class="fi reveal">
+        <button class="fq" onclick="toggleFaq(this)">Can you program smart keys and push-to-start keys?<span class="fq-ico"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="fa"><div class="fa-in">Yes. We program smart keys, proximity keys, push-to-start systems, and key fobs for many modern vehicles.</div></div>
       </div>
-
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          What if my car says "key not detected"?
-          <span class="faq-q-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">This usually means there is a problem with the key, battery, or programming. We can diagnose the issue and repair or replace the key if needed.</div></div>
+      <div class="fi reveal">
+        <button class="fq" onclick="toggleFaq(this)">What if my car says "key not detected"?<span class="fq-ico"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="fa"><div class="fa-in">This usually means there is a problem with the key, battery, or programming. We can diagnose the issue and repair or replace the key if needed.</div></div>
       </div>
-
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          Can you program a key I bought online?
-          <span class="faq-q-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">In many cases, yes. We can cut and program aftermarket keys, as long as they are compatible with your vehicle.</div></div>
+      <div class="fi reveal">
+        <button class="fq" onclick="toggleFaq(this)">Can you program a key I bought online?<span class="fq-ico"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="fa"><div class="fa-in">In many cases, yes. We can cut and program aftermarket keys, as long as they are compatible with your vehicle.</div></div>
       </div>
-
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          Do you make spare car keys?
-          <span class="faq-q-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">Yes. We recommend making a spare key to avoid emergency situations and reduce future costs.</div></div>
+      <div class="fi reveal">
+        <button class="fq" onclick="toggleFaq(this)">Do you make spare car keys?<span class="fq-ico"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="fa"><div class="fa-in">Yes. We recommend making a spare key to avoid emergency situations and reduce future costs.</div></div>
       </div>
-
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          What types of car keys do you work with?
-          <span class="faq-q-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">We work with transponder keys, smart keys, key fobs, push-to-start keys, laser cut keys, and high-security keys.</div></div>
+      <div class="fi reveal">
+        <button class="fq" onclick="toggleFaq(this)">What types of car keys do you work with?<span class="fq-ico"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="fa"><div class="fa-in">We work with: Transponder keys · Smart keys · Key fobs · Push-to-start keys · Laser cut keys · High-security keys</div></div>
       </div>
-
-      <div class="faq-item" style="grid-column: 1 / -1;">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          Why is my key not turning in the ignition?
-          <span class="faq-q-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">This could be caused by a worn key or a damaged ignition cylinder. We can inspect both and determine the correct solution.</div></div>
+      <div class="fi full-col reveal" style="grid-column:1/-1">
+        <button class="fq" onclick="toggleFaq(this)">Why is my key not turning in the ignition?<span class="fq-ico"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="fa"><div class="fa-in">This could be caused by a worn key or a damaged ignition cylinder. We can inspect both and determine the correct solution.</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── CONTACT ── -->
+
+<!-- ══ CONTACT ══ -->
 <section id="contact">
-  <div class="section-inner">
+  <div class="wrap">
     <div class="contact-grid">
       <div>
-        <span class="section-label">Contact Us</span>
+        <span class="lbl">Contact Us</span>
         <h2>Get in Touch</h2>
-        <p style="color:var(--slate);line-height:1.7;margin-bottom:0.5rem;">When you need fast, reliable car key service in Atlantic Beach, we're ready to help. Call us now for immediate assistance or to get a quote.</p>
-        <div class="contact-info">
-          <div class="contact-item">
-            <div class="ci-icon">
-              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.5 12a19.79 19.79 0 01-3.07-8.67A2 2 0 013.44 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 8.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-            </div>
-            <div>
-              <div class="ci-label">Phone</div>
-              <div class="ci-value"><a href="tel:9048489429">904-848-9429</a></div>
-            </div>
+        <p style="color:var(--slate);line-height:1.72;font-size:.97rem">When you need fast, reliable car key service in Atlantic Beach, we are ready to help. Call us now for immediate mobile assistance or to get a quote.</p>
+        <div class="contact-items">
+          <div class="ci reveal">
+            <div class="ci-ico"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.5 12a19.79 19.79 0 01-3.07-8.67A2 2 0 013.44 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 8.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></div>
+            <div><div class="ci-lbl">Phone</div><div class="ci-val"><a href="tel:9048489429">904-848-9429</a></div></div>
           </div>
-          <div class="contact-item">
-            <div class="ci-icon">
-              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <div>
-              <div class="ci-label">Address</div>
-              <div class="ci-value">363 Atlantic Blvd, Unit 4290A<br>Atlantic Beach, FL 32233</div>
-            </div>
+          <div class="ci reveal">
+            <div class="ci-ico"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><div class="ci-lbl">Address</div><div class="ci-val">363 Atlantic Blvd, Unit 4290A<br>Atlantic Beach, FL 32233</div></div>
           </div>
-          <div class="contact-item">
-            <div class="ci-icon">
-              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
-            </div>
-            <div>
-              <div class="ci-label">Website</div>
-              <div class="ci-value"><a href="https://carkeyreplacmentatlanticbeach.com" target="_blank" rel="noopener">carkeyreplacmentatlanticbeach.com</a></div>
-            </div>
+          <div class="ci reveal">
+            <div class="ci-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg></div>
+            <div><div class="ci-lbl">Website</div><div class="ci-val"><a href="https://carkeyreplacmentatlanticbeach.com" target="_blank" rel="noopener">carkeyreplacmentatlanticbeach.com</a></div></div>
           </div>
-          <div class="contact-item">
-            <div class="ci-icon">
-              <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-            </div>
-            <div>
-              <div class="ci-label">Service Area</div>
-              <div class="ci-value">Mobile — 60 Mile Radius<br><span style="font-size:0.8rem;color:var(--slate-light);font-weight:400;">Atlantic Beach & surrounding areas</span></div>
-            </div>
+          <div class="ci reveal">
+            <div class="ci-ico"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+            <div><div class="ci-lbl">Service Area</div><div class="ci-val">Mobile — 60-Mile Radius<br><span style="font-size:.8rem;color:var(--slate2);font-weight:400">Atlantic Beach &amp; surrounding areas</span></div></div>
           </div>
         </div>
       </div>
-
       <div>
-        <div class="contact-cta-box">
+        <div class="cta-box reveal">
           <h3>Need Help Right Now?</h3>
-          <p>We are available for mobile car key service in Atlantic Beach. Call us and a local technician will come directly to your location — no towing, no dealership delays.</p>
-          <a href="tel:9048489429" class="cta-phone-btn">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.5 12a19.79 19.79 0 01-3.07-8.67A2 2 0 013.44 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 8.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-            904-848-9429
-          </a>
+          <p>We are available for mobile car key service in Atlantic Beach. Call us and a local technician will come directly to your location — no towing, no dealership delays, no appointments needed.</p>
+          <a href="tel:9048489429" class="cta-tel"><svg viewBox="0 0 24 24" width="19" height="19" fill="white"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.5 12a19.79 19.79 0 01-3.07-8.67A2 2 0 013.44 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 8.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>904-848-9429</a>
         </div>
-
-        <div class="service-area-map" style="margin-top:1.5rem;">
-          <h3>Our Location</h3>
-          <div class="map-container">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30.3313!2d-81.3957!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0x0!2zMGFkZjFkZjFk!5e0!3m2!1sen!2sus!4v1707443123997!6m6!1sen!2sus!4s%203633%20Atlantic%20Blvd%2C%20Atlantic%20Beach%2C%20FL%2032233!5e0!3m2!1sen!2sus!4v1707443123997"
-              width="100%" 
-              height="300" 
-              style="border:0; border-radius: var(--radius);" 
-              allowfullscreen="" 
-              loading="lazy" 
-              referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-          </div>
-          <div class="map-info">
-            <p><strong>Address:</strong> 363 Atlantic Blvd, Unit 4290A, Atlantic Beach, FL 32233</p>
-            <p><strong>Service Area:</strong> 60-mile radius around Atlantic Beach</p>
-            <p><strong>Hours:</strong> Available 24/7 for emergency service</p>
+        <div class="area-card reveal">
+          <div class="area-ico"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <h3>Service Area</h3>
+          <p>We serve Atlantic Beach and all surrounding areas within a 60-mile mobile service radius.</p>
+          <div class="tags">
+            <span class="tag">Atlantic Beach</span><span class="tag">Jacksonville Beach</span><span class="tag">Neptune Beach</span><span class="tag">Ponte Vedra</span><span class="tag">Jacksonville</span><span class="tag">Orange Park</span><span class="tag">Fleming Island</span><span class="tag">St. Augustine</span>
           </div>
         </div>
       </div>
@@ -1580,113 +915,80 @@
   </div>
 </section>
 
-<!-- ── FOOTER ── -->
+
+<!-- ══ FOOTER ══ -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-top">
+  <div class="ft">
+    <div class="ft-top">
       <div>
-        <div class="footer-brand-name">
-          <img src="assets/images/logo.webp" alt="Car Key Replacement Atlantic Beach" style="width: 100px; height: 100px; border-radius: 8px;">
+        <div class="ft-logo">
+          <div class="ft-logo-ico"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3" fill="none" stroke="white" stroke-width="1.5"/></svg></div>
+          <span class="ft-logo-name">Car Key Replacement Atlantic Beach</span>
         </div>
-        <div class="footer-tagline">Local & family-owned car key specialists serving Atlantic Beach, FL and the surrounding area. Mobile service available — we come to you.</div>
-        <a href="tel:9048489429" class="footer-phone-link">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.5 12a19.79 19.79 0 01-3.07-8.67A2 2 0 013.44 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 8.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-          904-848-9429
-        </a>
+        <p class="ft-tag">Local &amp; family-owned car key specialists serving Atlantic Beach, FL and the surrounding area within a 60-mile mobile service radius. We come directly to your location.</p>
+        <a href="tel:9048489429" class="ft-phone"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.5 12a19.79 19.79 0 01-3.07-8.67A2 2 0 013.44 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 8.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>904-848-9429</a>
       </div>
       <div>
-        <div class="footer-col-title">Services</div>
-        <ul class="footer-links">
-          <li><a href="#ignition">Ignition Repair & Replacement</a></li>
-          <li><a href="#keyfob">Key Fob & Push-to-Start</a></li>
+        <div class="ft-col-t">Services</div>
+        <ul class="ft-links">
+          <li><a href="#ignition">Ignition Repair &amp; Replacement</a></li>
+          <li><a href="#keyfob">Key Fob &amp; Push-to-Start</a></li>
           <li><a href="#mobile">Mobile Key Replacement</a></li>
-          <li><a href="#cutting">Key Cutting & Programming</a></li>
+          <li><a href="#cutting">Key Cutting &amp; Programming</a></li>
         </ul>
       </div>
       <div>
-        <div class="footer-col-title">Quick Links</div>
-        <ul class="footer-links">
+        <div class="ft-col-t">Quick Links</div>
+        <ul class="ft-links">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
           <li><a href="#reviews">Reviews</a></li>
           <li><a href="#faq">FAQ</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact">Contact Us</a></li>
           <li><a href="https://carkeyreplacmentatlanticbeach.com" target="_blank" rel="noopener">Website</a></li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <div>
-      </div>
+    <div class="ft-bot">
+      <span>© 2024 Car Key Replacement Atlantic Beach. All rights reserved.</span>
+      <span>363 Atlantic Blvd, Unit 4290A · Atlantic Beach, FL 32233</span>
     </div>
   </div>
 </footer>
 
-<!-- ── FLOATING CALL BUTTON ── -->
-<a href="tel:9048489429" class="floating-call-btn" aria-label="Call Now">
-  📞
-</a>
-
 <script>
-  // Navbar scroll effect
-  window.addEventListener('scroll', () => {
-    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
-  });
+// Navbar scroll
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>20);
+});
 
-  // Hamburger toggle
-  const hamburger = document.getElementById('hamburger');
-  const mobileNav = document.getElementById('mobileNav');
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
-    mobileNav.classList.toggle('open');
-  });
+// Burger menu
+const burger=document.getElementById('burger');
+const mobNav=document.getElementById('mobNav');
+burger.addEventListener('click',()=>{
+  burger.classList.toggle('open');
+  mobNav.classList.toggle('open');
+});
+function closeM(){burger.classList.remove('open');mobNav.classList.remove('open');}
+function toggleSub(el){el.nextElementSibling.classList.toggle('open');}
+document.addEventListener('click',e=>{
+  if(!burger.contains(e.target)&&!mobNav.contains(e.target))closeM();
+});
 
-  function closeMobile() {
-    hamburger.classList.remove('open');
-    mobileNav.classList.remove('open');
-  }
+// FAQ accordion
+function toggleFaq(btn){
+  const item=btn.closest('.fi');
+  const wasOpen=item.classList.contains('open');
+  document.querySelectorAll('.fi.open').forEach(i=>i.classList.remove('open'));
+  if(!wasOpen)item.classList.add('open');
+}
 
-  function toggleMobileSub(el) {
-    const sub = el.nextElementSibling;
-    sub.classList.toggle('open');
-  }
-
-  // Close mobile nav on outside click
-  document.addEventListener('click', (e) => {
-    if (!hamburger.contains(e.target) && !mobileNav.contains(e.target)) {
-      closeMobile();
-    }
-  });
-
-  // FAQ accordion
-  function toggleFaq(btn) {
-    const item = btn.closest('.faq-item');
-    const isOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
-    if (!isOpen) item.classList.add('open');
-  }
-
-  // Smooth anchor links close mobile nav
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', () => closeMobile());
-  });
-
-  // Simple fade-in on scroll
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.style.opacity = '1';
-        e.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.service-card, .review-card, .about-feature, .faq-item, .contact-item, .detail-box').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    observer.observe(el);
-  });
+// Scroll reveal
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
 </body>
 </html>
