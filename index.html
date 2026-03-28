@@ -13,7 +13,16 @@
 <link rel="preload" as="image" href="assets/images/logo.webp" fetchpriority="high">
 
 <style>
-/* === CRITICAL CSS - inlined, zero render-blocking === */
+@font-face {
+  font-family: 'Fraunces';
+  font-display: swap;
+  src: local('Fraunces');
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-display: swap;
+  src: local('DM Sans');
+}
 :root{
   --cream:#FDFAF4;--white:#fff;--navy:#0F2240;--navy2:#1A3560;
   --gold:#C9933A;--gold2:#E8B567;--gold-pale:#FDF3E3;
@@ -286,7 +295,40 @@ footer{background:var(--navy);color:rgba(255,255,255,.68);padding:3rem 1.5rem 1.
 .ft-bot a:hover{color:var(--gold2)}
 /* NON-CRITICAL MOBILE */
 @media(max-width:600px){
-  .det-sec{padding:2.75rem 1.15rem}
+  /* Optimize font loading for mobile */
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+  
+  /* Reduce hero complexity for faster render */
+  #home{min-height:auto;padding-top:70px;padding-bottom:2rem}
+  .hero-grid{gap:2rem}
+  .hero-visual{order:-1;min-height:300px}
+  
+  /* Optimize animations for mobile */
+  .reveal{transition:none}
+  .float-badge{animation:none}
+  
+  /* Simplify shadows for mobile performance */
+  .hero-card,.sc{box-shadow:0 4px 15px var(--sh)}
+  
+  /* Reduce padding for faster render */
+  section{padding:3rem 1.25rem}
+}
+
+/* ───── RESPONSIVE ───── */
+@media(max-width:920px){
+  .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+  .hero-visual{order:-1}
+  .det-grid{grid-template-columns:1fr}
+  .two-col-in{grid-template-columns:1fr}
+  .faq-grid{grid-template-columns:1fr}
+  .ft-top{grid-template-columns:1fr 1fr}
+  .nav-links{display:none}
+  .burger{display:flex}
+}
+@media(max-width:600px){
+  section,.det-sec{padding:3.25rem 1.25rem}
+  .hero-btns{flex-direction:column}
+  .btn-p,.btn-s{width:100%;justify-content:center}
   .svc-grid,.rev-grid{grid-template-columns:1fr}
   .faq-grid{grid-template-columns:1fr}
   .ft-top{grid-template-columns:1fr;gap:1.75rem}
@@ -300,11 +342,15 @@ footer{background:var(--navy);color:rgba(255,255,255,.68);padding:3rem 1.5rem 1.
 <!-- NAV -->
 <nav id="navbar">
   <a href="#home" class="nav-logo">
-    <div>
-      <img src="assets/images/logo.webp" alt="Car Key Replacement Atlantic Beach" width="81" height="81" fetchpriority="high" decoding="sync" style="width:81px;height:81px;border-radius:4px;margin-left:320px;">
+    <div class="nav-logo-icon">
+      <svg viewBox="0 0 24 24" width="21" height="21" fill="var(--gold)"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3" fill="none" stroke="#C9933A" stroke-width="2"/></svg>
+    </div>
+    <div class="nav-logo-text">
+      <span>Car Key Replacement</span>
+      <span>Atlantic Beach, FL</span>
     </div>
   </a>
-  <ul class="nav-links" style="position:absolute;left:50%;transform:translateX(-50%);">
+  <ul class="nav-links">
     <li><a href="#home">Home</a></li>
     <li class="dropdown">
       <a href="#services">Services <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></a>
@@ -318,19 +364,10 @@ footer{background:var(--navy);color:rgba(255,255,255,.68);padding:3rem 1.5rem 1.
     <li><a href="#about">About</a></li>
     <li><a href="#contact">Contact Us</a></li>
     <li><a href="#faq">FAQ</a></li>
-    <li><a href="tel:9048489429" class="nav-cta" style="margin-right:60px;">&#128222; 904-848-9429</a></li>
+    <li><a href="tel:9048489429" class="nav-cta">📞 904-848-9429</a></li>
   </ul>
   <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
-
-<!-- Floating Call Button -->
-<a href="tel:9048489429" style="position:fixed;bottom:30px;right:30px;background:#0F2240;color:white;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;z-index:1000;font-size:24px;box-shadow:0 4px 20px rgba(15,34,64,.3);transition:background .3s,transform .3s;" onmouseover="this.style.background='#C9933A';this.style.transform='scale(1.1)';" onmouseout="this.style.background='#0F2240';this.style.transform='scale(1)';">&#128222;</a>
-<style>
-@media(max-width:600px){
-  nav img[width="81"]{margin-left:0!important}
-  a[href="tel:9048489429"][style*="position:fixed"]{width:50px!important;height:50px!important;bottom:20px!important;right:20px!important;font-size:20px!important}
-}
-</style>
 
 <!-- Mobile Nav -->
 <div class="mob-nav" id="mobNav">
@@ -356,27 +393,25 @@ footer{background:var(--navy);color:rgba(255,255,255,.68);padding:3rem 1.5rem 1.
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <div class="hero-badge">Mobile Service &middot; Atlantic Beach, FL</div>
-        <h1>Local &amp; Family-Owned <em>Car Key Specialists</em> in Atlantic Beach</h1>
-        <p class="hero-p">Car Key Replacement Atlantic Beach is a locally owned and family-operated business focused on providing reliable automotive key services to drivers in the community. We are not a large call center or a national chain. Every service call is handled by a local technician who understands the area, the roads, and the needs of customers in Atlantic Beach and nearby neighborhoods.</p>
+        <div class="hero-badge">Mobile Service · Atlantic Beach, FL</div>
+        <h1 style="min-height: 2.5em;">Local &amp; Family-Owned <em>Car Key Specialists</em> in Atlantic Beach</h1>
+        <p class="hero-p" style="min-height: 4.5em; line-height: 1.6;">Car Key Replacement Atlantic Beach is a locally owned and family-operated business focused on providing reliable automotive key services to drivers in the community. We are not a large call center or a national chain. Every service call is handled by a local technician who understands the area, the roads, and the needs of customers in Atlantic Beach and nearby neighborhoods.</p>
         <div class="hero-btns">
           <a href="tel:9048489429" class="btn-p"><svg viewBox="0 0 24 24" width="17" height="17" fill="white"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.5 12a19.79 19.79 0 01-3.07-8.67A2 2 0 013.44 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 8.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>Call Now: 904-848-9429</a>
           <a href="#services" class="btn-s">Our Services</a>
         </div>
-        <div class="hero-stats">
-          <div><div class="stat-n">60mi</div><div class="stat-l">Service Radius</div></div>
-          <div><div class="stat-n">30&#8211;60</div><div class="stat-l">Min Per Job</div></div>
-          <div><div class="stat-n">5 &#9733;</div><div class="stat-l">Customer Rating</div></div>
-          <div><div class="stat-n">100%</div><div class="stat-l">Mobile Service</div></div>
+        <div class="hero-stats" style="display: flex; gap: 1.4rem; flex-wrap: wrap;">
+          <div style="min-width: 80px;"><div class="stat-n">60mi</div><div class="stat-l">Service Radius</div></div>
+          <div style="min-width: 80px;"><div class="stat-n">30–60</div><div class="stat-l">Min Per Job</div></div>
+          <div style="min-width: 80px;"><div class="stat-n">5 ★</div><div class="stat-l">Customer Rating</div></div>
+          <div style="min-width: 80px;"><div class="stat-n">100%</div><div class="stat-l">Mobile Service</div></div>
         </div>
       </div>
-      <div class="hero-visual">
+      <div class="hero-visual" style="display:flex;justify-content:center;align-items:center">
         <div class="hero-card">
           <div class="float-badge"><span>&#128663;</span>We Come<br>To You!</div>
           <div class="hc-top">
-            <div class="hc-ico">
-              <img src="assets/images/logo.webp" alt="" width="25" height="25" loading="eager" decoding="async" style="width:25px;height:25px;border-radius:6px;">
-            </div>
+            <div class="hc-ico"><svg viewBox="0 0 24 24" width="25" height="25" fill="var(--gold)"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3" fill="none" stroke="#C9933A" stroke-width="2"/></svg></div>
             <div><div class="hc-title">Mobile Car Key Service</div><div class="hc-sub">Atlantic Beach &amp; 60-mile radius</div></div>
           </div>
           <div class="hc-chips">
@@ -391,10 +426,6 @@ footer{background:var(--navy);color:rgba(255,255,255,.68);padding:3rem 1.5rem 1.
     </div>
   </div>
 </section>
-
-<div style="text-align:center;padding:1rem 0;background:rgba(15,34,64,.05);">
-  <a href="tel:9048489429" style="color:#0F2240;text-decoration:none;font-weight:600;font-size:1.1rem;display:inline-flex;align-items:center;gap:8px;">&#128222; Call 904-848-9429 for Immediate Service</a>
-</div>
 
 
 <!-- ABOUT -->
@@ -445,10 +476,6 @@ footer{background:var(--navy);color:rgba(255,255,255,.68);padding:3rem 1.5rem 1.
   </div>
 </section>
 
-<div style="text-align:center;padding:1rem 0;background:rgba(15,34,64,.05);">
-  <a href="tel:9048489429" style="color:#0F2240;text-decoration:none;font-weight:600;font-size:1.1rem;display:inline-flex;align-items:center;gap:8px;">&#128222; Meet our team - Call 904-848-9429</a>
-</div>
-
 
 <!-- SERVICES OVERVIEW -->
 <section id="services">
@@ -492,10 +519,6 @@ footer{background:var(--navy);color:rgba(255,255,255,.68);padding:3rem 1.5rem 1.
     </div>
   </div>
 </section>
-
-<div style="text-align:center;padding:1rem 0;background:rgba(201,147,58,.1);">
-  <a href="tel:9048489429" style="color:#0F2240;text-decoration:none;font-weight:600;font-size:1.1rem;display:inline-flex;align-items:center;gap:8px;">&#128222; Call 904-848-9429 for Service Help</a>
-</div>
 
 
 <!-- IGNITION DETAIL -->
@@ -561,10 +584,6 @@ footer{background:var(--navy);color:rgba(255,255,255,.68);padding:3rem 1.5rem 1.
   </div>
 </section>
 
-<div style="text-align:center;padding:1rem 0;background:rgba(15,34,64,.05);">
-  <a href="tel:9048489429" style="color:#0F2240;text-decoration:none;font-weight:600;font-size:1.1rem;display:inline-flex;align-items:center;gap:8px;">&#128222; Ignition problems? Call 904-848-9429</a>
-</div>
-
 
 <!-- KEY FOB DETAIL -->
 <section id="keyfob" class="det-sec alt">
@@ -607,10 +626,6 @@ footer{background:var(--navy);color:rgba(255,255,255,.68);padding:3rem 1.5rem 1.
     </div>
   </div>
 </section>
-
-<div style="text-align:center;padding:1rem 0;background:rgba(201,147,58,.1);">
-  <a href="tel:9048489429" style="color:#0F2240;text-decoration:none;font-weight:600;font-size:1.1rem;display:inline-flex;align-items:center;gap:8px;">&#128222; Key fob issues? Call 904-848-9429</a>
-</div>
 
 
 <!-- MOBILE DETAIL -->
@@ -674,10 +689,6 @@ footer{background:var(--navy);color:rgba(255,255,255,.68);padding:3rem 1.5rem 1.
   </div>
 </section>
 
-<div style="text-align:center;padding:1rem 0;background:rgba(15,34,64,.05);">
-  <a href="tel:9048489429" style="color:#0F2240;text-decoration:none;font-weight:600;font-size:1.1rem;display:inline-flex;align-items:center;gap:8px;">&#128222; Need mobile service? Call 904-848-9429</a>
-</div>
-
 
 <!-- KEY CUTTING DETAIL -->
 <section id="cutting" class="det-sec alt">
@@ -732,10 +743,6 @@ footer{background:var(--navy);color:rgba(255,255,255,.68);padding:3rem 1.5rem 1.
   </div>
 </section>
 
-<div style="text-align:center;padding:1rem 0;background:rgba(201,147,58,.1);">
-  <a href="tel:9048489429" style="color:#0F2240;text-decoration:none;font-weight:600;font-size:1.1rem;display:inline-flex;align-items:center;gap:8px;">&#128222; Need key programming? Call 904-848-9429</a>
-</div>
-
 
 <!-- REVIEWS -->
 <section id="reviews">
@@ -772,10 +779,6 @@ footer{background:var(--navy);color:rgba(255,255,255,.68);padding:3rem 1.5rem 1.
     </div>
   </div>
 </section>
-
-<div style="text-align:center;padding:1rem 0;background:rgba(15,34,64,.05);">
-  <a href="tel:9048489429" style="color:#0F2240;text-decoration:none;font-weight:600;font-size:1.1rem;display:inline-flex;align-items:center;gap:8px;">&#128222; Join our happy customers - Call 904-848-9429</a>
-</div>
 
 
 <!-- FAQ -->
@@ -825,10 +828,6 @@ footer{background:var(--navy);color:rgba(255,255,255,.68);padding:3rem 1.5rem 1.
   </div>
 </section>
 
-<div style="text-align:center;padding:1rem 0;background:rgba(15,34,64,.05);">
-  <a href="tel:9048489429" style="color:#0F2240;text-decoration:none;font-weight:600;font-size:1.1rem;display:inline-flex;align-items:center;gap:8px;">&#128222; Still have questions? Call 904-848-9429</a>
-</div>
-
 
 <!-- CONTACT -->
 <section id="contact">
@@ -863,14 +862,10 @@ footer{background:var(--navy);color:rgba(255,255,255,.68);padding:3rem 1.5rem 1.
           <p>We are available for mobile car key service in Atlantic Beach. Call us and a local technician will come directly to your location &#8212; no towing, no dealership delays, no appointments needed.</p>
           <a href="tel:9048489429" class="cta-tel"><svg viewBox="0 0 24 24" width="19" height="19" fill="white"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.5 12a19.79 19.79 0 01-3.07-8.67A2 2 0 013.44 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 8.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>904-848-9429</a>
         </div>
-        <div class="area-card reveal" style="padding:1.5rem;">
-          <h3 style="margin-bottom:1rem;font-size:1.05rem;color:var(--navy);">Our Location</h3>
-          <p style="margin-bottom:1rem;font-size:.84rem;color:var(--slate);line-height:1.6;">363 Atlantic Blvd, Unit 4290A<br>Atlantic Beach, FL 32233</p>
-          <!-- PERF: iframe lazy-loaded — not in initial viewport -->
-          <div style="border-radius:var(--rl);overflow:hidden;margin-bottom:1rem;border:1px solid var(--border);">
-            <iframe src="https://maps.google.com/maps?q=363+Atlantic+Blvd,+Unit+4290A,+Atlantic+Beach,+FL+32233&output=embed" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" title="Our location map"></iframe>
-          </div>
-          <p style="font-size:.84rem;color:var(--slate);line-height:1.6;margin-bottom:1rem;">We serve Atlantic Beach and all surrounding areas within a 60-mile mobile service radius.</p>
+        <div class="area-card reveal">
+          <div class="area-ico"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <h3>Service Area</h3>
+          <p>We serve Atlantic Beach and all surrounding areas within a 60-mile mobile service radius.</p>
           <div class="tags">
             <span class="tag">Atlantic Beach</span><span class="tag">Jacksonville Beach</span><span class="tag">Neptune Beach</span><span class="tag">Ponte Vedra</span><span class="tag">Jacksonville</span><span class="tag">Orange Park</span><span class="tag">Fleming Island</span><span class="tag">St. Augustine</span>
           </div>
@@ -887,9 +882,8 @@ footer{background:var(--navy);color:rgba(255,255,255,.68);padding:3rem 1.5rem 1.
     <div class="ft-top">
       <div>
         <div class="ft-logo">
-          <div style="background:white;display:inline-block;">
-            <img src="assets/images/logo.webp" alt="Car Key Replacement Atlantic Beach" width="91" height="91" loading="lazy" decoding="async" style="width:91px;height:91px;border-radius:4px;">
-          </div>
+          <div class="ft-logo-ico"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3" fill="none" stroke="white" stroke-width="1.5"/></svg></div>
+          <span class="ft-logo-name">Car Key Replacement Atlantic Beach</span>
         </div>
         <p class="ft-tag">Local &amp; family-owned car key specialists serving Atlantic Beach, FL and the surrounding area within a 60-mile mobile service radius. We come directly to your location.</p>
         <a href="tel:9048489429" class="ft-phone"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.5 12a19.79 19.79 0 01-3.07-8.67A2 2 0 013.44 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 8.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>904-848-9429</a>
